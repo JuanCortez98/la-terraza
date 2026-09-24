@@ -1,0 +1,12 @@
+{
+  "name": "la-terraza",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Web de La Terraza, Otura",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "engines": {
+    "node": ">=20"
+  }
+}
