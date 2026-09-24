@@ -653,6 +653,36 @@ section { padding: 5.5rem 0; }
   grid-row: span 1;
 }
 
+.gallery-category + .gallery-category { margin-top: 5rem; }
+.gallery-category .section-title { margin-bottom: 1.75rem; }
+
+/* ========== SPACES ========== */
+.spaces { background: var(--cream); }
+.spaces .section-lead { max-width: 680px; }
+.spaces-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.25rem;
+  margin-top: 2.5rem;
+}
+.space-card {
+  background: var(--white);
+  border-radius: var(--radius);
+  overflow: hidden;
+  box-shadow: 0 12px 30px rgba(26,46,26,0.08);
+}
+.space-card img { width: 100%; height: 250px; object-fit: cover; }
+.space-card-content { padding: 1.5rem; }
+.space-card-content .section-label { margin-bottom: 0.5rem; }
+.space-card h3 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.7rem;
+  color: var(--green-dark);
+  margin-bottom: 0.5rem;
+}
+.space-card p:last-child { color: var(--text-light); font-size: 0.95rem; }
+.spaces-actions { margin-top: 2rem; text-align: center; }
+
 /* ========== EXPERIENCE ========== */
 .experience {
   background: var(--green-dark);
@@ -1239,7 +1269,8 @@ section { padding: 5.5rem 0; }
   .birthday-gallery { min-height: 430px; max-width: 520px; margin: 0 auto; width: 100%; }
   .menu-grid { grid-template-columns: 1fr; }
   .exp-grid,
-  .reviews-grid { grid-template-columns: 1fr; }
+  .reviews-grid,
+  .spaces-grid { grid-template-columns: 1fr; }
   .gallery-grid {
     grid-template-columns: repeat(2, 1fr);
     grid-template-rows: repeat(3, 180px);
