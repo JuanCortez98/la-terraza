@@ -69,9 +69,21 @@ a { color: inherit; text-decoration: none; }
   color: var(--white);
   letter-spacing: 0.04em;
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
+  align-items: center;
+  gap: 0.5rem;
   line-height: 1.15;
 }
+
+.brand-mark {
+  width: 58px;
+  height: 28px;
+  object-fit: cover;
+  object-position: left center;
+  border-radius: 2px;
+}
+
+.brand-copy { display: flex; flex-direction: column; }
 
 .logo span {
   font-size: 0.62rem;
