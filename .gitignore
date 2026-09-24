@@ -1,5 +1,7 @@
 # Large source videos are not used by the static site and exceed GitHub's file limit.
 *.mp4
+!assets/videos/
+!assets/videos/*.mp4
 
 # Local editor and operating-system files.
 .DS_Store
