@@ -63,19 +63,15 @@
         </div>
       </div>
 
-      <div class="menu-tabs">
-        <button class="menu-tab active" data-tab="ensaladas">Ensaladas</button>
-        <button class="menu-tab" data-tab="compartir">Para compartir</button>
-        <button class="menu-tab" data-tab="pizzas">Pizzas</button>
-        <button class="menu-tab" data-tab="mar">Del mar</button>
-        <button class="menu-tab" data-tab="carnes">Carnes</button>
-        <button class="menu-tab" data-tab="poke">Poké</button>
-        <button class="menu-tab" data-tab="infantiles">Infantiles</button>
-        <button class="menu-tab" data-tab="postres">Postres y meriendas</button>
-        <button class="menu-tab" data-tab="cocktails">Cócteles</button>
+      <div class="menu-tabs" role="group" aria-label="Categorías de la carta">
+        <button class="menu-tab active" data-tab="entradas" aria-pressed="true">Entradas</button>
+        <button class="menu-tab" data-tab="comidas" aria-pressed="false">Comidas</button>
+        <button class="menu-tab" data-tab="postres" aria-pressed="false">Postres</button>
+        <button class="menu-tab" data-tab="demas" aria-pressed="false">Y demás</button>
       </div>
 
-      <div class="menu-panel active" id="panel-ensaladas">
+      <div class="menu-panel active" id="panel-ensaladas" data-category="entradas">
+        <h3 class="menu-panel-heading">Ensaladas</h3>
         <div class="menu-grid">
           <div class="menu-item"><h4>Tomate aliñado con melva</h4><span class="price">10,50 €</span></div>
           <div class="menu-item"><h4>Ensalada de la huerta</h4><span class="price">11,50 €</span><p>Lechuga, tomate, pepino, huevo duro, atún, maíz, zanahoria, aceitunas negras y espárragos.</p></div>
@@ -85,7 +81,8 @@
         </div>
       </div>
 
-      <div class="menu-panel" id="panel-compartir">
+      <div class="menu-panel active" id="panel-compartir" data-category="entradas">
+        <h3 class="menu-panel-heading">Para compartir</h3>
         <div class="menu-grid">
           <div class="menu-item"><h4>Nachos con carne y cheddar</h4><span class="price">10,50 €</span></div>
           <div class="menu-item"><h4>Berenjenas con miel</h4><span class="price">13,50 €</span></div>
@@ -109,7 +106,8 @@
         </div>
       </div>
 
-      <div class="menu-panel" id="panel-pizzas">
+      <div class="menu-panel" id="panel-pizzas" data-category="comidas">
+        <h3 class="menu-panel-heading">Pizzas</h3>
         <div class="menu-grid">
           <div class="menu-item"><h4>Margarita</h4><span class="price">9,50 €</span><p>Tomate, queso y orégano.</p></div>
           <div class="menu-item"><h4>Prosciuto</h4><span class="price">10,00 €</span><p>Tomate, queso, jamón york y orégano.</p></div>
@@ -130,7 +128,8 @@
         </div>
       </div>
 
-      <div class="menu-panel" id="panel-mar">
+      <div class="menu-panel" id="panel-mar" data-category="comidas">
+        <h3 class="menu-panel-heading">Del mar</h3>
         <div class="menu-grid">
           <div class="menu-item"><h4>Bacalao frito</h4><span class="price">13,50 €</span></div>
           <div class="menu-item"><h4>Cazón en adobo</h4><span class="price">13,50 €</span></div>
@@ -142,7 +141,8 @@
         </div>
       </div>
 
-      <div class="menu-panel" id="panel-carnes">
+      <div class="menu-panel" id="panel-carnes" data-category="comidas">
+        <h3 class="menu-panel-heading">Carnes y hamburguesas</h3>
         <div class="menu-grid">
           <div class="menu-item"><h4>Hamburguesa La Terraza</h4><span class="price">11,50 €</span><p>200 g de vacuno 100%.</p></div>
           <div class="menu-item"><h4>Hamburguesa de pollo crujiente</h4><span class="price">11,00 €</span></div>
@@ -156,7 +156,8 @@
         </div>
       </div>
 
-      <div class="menu-panel" id="panel-poke">
+      <div class="menu-panel" id="panel-poke" data-category="comidas">
+        <h3 class="menu-panel-heading">Poké</h3>
         <div class="menu-grid">
           <div class="menu-item"><h4>Aloha</h4><span class="price">15,50 €</span><p>Arroz basmati, pollo, tomate cherry, cebolla roja, aguacate, piña, alioli de aguacate, pipas de calabaza y salsa de soja.</p></div>
           <div class="menu-item"><h4>Honolulu</h4><span class="price">15,50 €</span><p>Quinoa, atún rojo, mango, cebolla roja, champiñón, cebollino, alioli de mango y salsa de soja.</p></div>
@@ -164,7 +165,8 @@
         </div>
       </div>
 
-      <div class="menu-panel" id="panel-infantiles">
+      <div class="menu-panel" id="panel-infantiles" data-category="comidas">
+        <h3 class="menu-panel-heading">Infantiles</h3>
         <div class="menu-grid">
           <div class="menu-item"><h4>San Jacobo con patatas</h4><span class="price">7,50 €</span></div>
           <div class="menu-item"><h4>Pechuga empanada con patatas</h4><span class="price">7,50 €</span></div>
@@ -175,18 +177,26 @@
         <div class="menu-kids-note"><strong>Parque infantil de bolas</strong><span>En el interior. Menores de tres años acompañados de un adulto.</span><span>Se celebran cumpleaños. Información y reservas: <a href="tel:+34623112264">623 112 264</a></span></div>
       </div>
 
-      <div class="menu-panel" id="panel-postres">
+      <div class="menu-panel" id="panel-crepes-salados" data-category="comidas">
+        <h3 class="menu-panel-heading">Crepes salados</h3>
+        <div class="menu-grid">
+          <div class="menu-item"><h4>Crepes salados</h4><span class="price">6,50 €</span><p>York y queso; serrano y queso; pollo y queso.</p></div>
+        </div>
+      </div>
+
+      <div class="menu-panel" id="panel-postres" data-category="postres">
+        <h3 class="menu-panel-heading">Postres y meriendas</h3>
         <div class="menu-grid">
           <div class="menu-item"><h4>Crepes dulces</h4><span class="price">6,00 € / 6,50 €</span><p>Chocolate y nata; Nutella y nata; dulce de leche y nata (6,00 €). Chocolate, nata y helado de vainilla; Nutella, plátano y nata; chocolate, chocolate blanco y nata (6,50 €).</p></div>
           <div class="menu-item"><h4>Gofres</h4><span class="price">6,00 € / 6,50 €</span><p>Las mismas combinaciones dulces de crepes.</p></div>
           <div class="menu-item"><h4>Tartas</h4><span class="price">5,50 €</span><p>Queso, Oreo, de la abuela, zanahoria, Red Velvet y 3 chocolates.</p></div>
           <div class="menu-item"><h4>Brownie con bola de helado</h4><span class="price">6,00 €</span></div>
           <div class="menu-item"><h4>Copa de helado</h4><span class="price">6,00 €</span><p>Chocolate, vainilla y fresa.</p></div>
-          <div class="menu-item"><h4>Crepes salados</h4><span class="price">6,50 €</span><p>York y queso; serrano y queso; pollo y queso.</p></div>
         </div>
       </div>
 
-      <div class="menu-panel" id="panel-cocktails">
+      <div class="menu-panel" id="panel-cocktails" data-category="demas">
+        <h3 class="menu-panel-heading">Cócteles</h3>
         <div class="menu-grid">
           <div class="menu-item"><h4>Paloma Tropical</h4><span class="price">7,00 €</span><p>Tequila, lima, mango y Royal Bliss Pink Grapefruit.</p></div>
           <div class="menu-item"><h4>Otura Citrus</h4><span class="price">7,00 €</span><p>Ginebra de pomelo, lima y Royal Bliss Pink.</p></div>

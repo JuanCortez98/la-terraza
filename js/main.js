@@ -30,11 +30,14 @@ document.addEventListener('DOMContentLoaded', () => {
   document.querySelectorAll('.menu-tab').forEach(tab => {
     tab.addEventListener('click', () => {
       const target = tab.dataset.tab;
-      document.querySelectorAll('.menu-tab').forEach(t => t.classList.remove('active'));
-      document.querySelectorAll('.menu-panel').forEach(p => p.classList.remove('active'));
-      document.querySelectorAll(`.menu-tab[data-tab="${target}"]`).forEach(t => t.classList.add('active'));
-      const panel = document.getElementById('panel-' + target);
-      if (panel) panel.classList.add('active');
+      document.querySelectorAll('.menu-tab').forEach(item => {
+        const isActive = item === tab;
+        item.classList.toggle('active', isActive);
+        item.setAttribute('aria-pressed', String(isActive));
+      });
+      document.querySelectorAll('.menu-panel').forEach(panel => {
+        panel.classList.toggle('active', panel.dataset.category === target);
+      });
     });
   });
 
