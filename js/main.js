@@ -38,16 +38,6 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
-  // Contact form demo
-  const form = document.getElementById('contactForm');
-  if (form) {
-    form.addEventListener('submit', (e) => {
-      e.preventDefault();
-      alert('¡Gracias! Hemos recibido tu mensaje y te responderemos pronto.');
-      form.reset();
-    });
-  }
-
   // Reveal sections as they enter the viewport.
   const revealItems = document.querySelectorAll('section:not(.hero), .footer');
   const revealObserver = new IntersectionObserver((entries, observer) => {

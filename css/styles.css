@@ -237,7 +237,7 @@ a { color: inherit; text-decoration: none; }
   inset: 0;
   background:
     linear-gradient(135deg, rgba(26,46,26,0.82) 0%, rgba(26,46,26,0.55) 50%, rgba(15,15,15,0.7) 100%),
-    url('../assets/terraza-ambiente.jpg') center/cover no-repeat;
+    url('../la terraza otura/fotos la terraza julio/GXM_0129.jpg') center/cover no-repeat;
 }
 
 .hero-content {
@@ -715,7 +715,7 @@ section { padding: 5.5rem 0; }
 .spaces .section-lead { max-width: 680px; }
 .spaces-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 240px), 1fr));
   gap: 1.25rem;
   margin-top: 2.5rem;
 }
@@ -758,6 +758,26 @@ section { padding: 5.5rem 0; }
   font-size: 2rem;
   margin-bottom: 0.6rem;
 }
+
+.hours { background: var(--white); }
+.hours .section-lead { max-width: 620px; }
+.hours-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 220px), 1fr));
+  gap: 0 2rem;
+  max-width: 900px;
+  margin-top: 2rem;
+  border-top: 1px solid var(--cream-dark);
+}
+.hours-row {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 1rem 0;
+  border-bottom: 1px solid var(--cream-dark);
+}
+.hours-row strong { color: var(--green-dark); }
+.hours-row span { color: var(--text-light); white-space: nowrap; }
 .spaces-video p:last-child { color: var(--text-light); }
 .birthday-video-gallery video { width: 100%; height: 100%; object-fit: cover; border-radius: inherit; }
 
@@ -1032,6 +1052,28 @@ section { padding: 5.5rem 0; }
 /* ========== CONTACT ========== */
 .contact { background: var(--cream); }
 
+.contact-phone {
+  max-width: 760px;
+  margin: 0 auto 3rem;
+  text-align: center;
+}
+.contact-phone .section-label { color: var(--green-mid); }
+.contact-phone-number {
+  display: inline-block;
+  color: var(--green-dark);
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(2.3rem, 6vw, 4rem);
+  font-weight: 600;
+  line-height: 1.1;
+}
+.contact-phone > p:last-child { color: var(--text-light); margin-top: 0.75rem; }
+.contact-grid.contact-details {
+  max-width: 700px;
+  margin-inline: auto;
+  grid-template-columns: 1fr;
+}
+.contact-hours { margin-top: 3rem; }
+
 .contact-grid {
   display: grid;
   grid-template-columns: 1fr 1.1fr;
@@ -1260,6 +1302,7 @@ section { padding: 5.5rem 0; }
 
 /* ========== WHATSAPP FLOAT ========== */
 .wa-float {
+  display: none;
   position: fixed;
   bottom: 1.75rem;
   right: 1.75rem;
@@ -1268,7 +1311,6 @@ section { padding: 5.5rem 0; }
   height: 58px;
   background: #25d366;
   border-radius: 50%;
-  display: flex;
   align-items: center;
   justify-content: center;
   box-shadow: 0 8px 25px rgba(37, 211, 102, 0.4);

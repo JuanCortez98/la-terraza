@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Contacto | La Terraza · Otura, Granada</title>
-  <meta name="description" content="Contacta con La Terraza en Otura (Granada). Teléfono +34 623 112 264. Carretera Otura Dílar s/n. Abierto de 12:30 a 24:00." />
+  <meta name="description" content="Contacta con La Terraza en Otura (Granada). Teléfono +34 623 112 264. Carretera Otura Dílar s/n." />
   <meta name="theme-color" content="#1a2e1a" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -23,6 +23,7 @@
         <a href="carta.html" data-lang="es">Carta</a>
         <a href="galeria.html" data-lang="es">Galería</a>
         <a href="eventos.html" data-lang="es">Eventos</a>
+        <a href="cumpleanos-infantiles.html" data-lang="es">Cumpleaños infantiles</a>
         <a href="contacto.html" class="active" data-lang="es">Contacto</a>
         <a href="contacto.html" class="nav-cta" data-lang="es">Reservar mesa</a>
       </nav>
@@ -36,6 +37,7 @@
     <a href="carta.html" data-lang="es">Carta</a>
     <a href="galeria.html" data-lang="es">Galería</a>
     <a href="eventos.html" data-lang="es">Eventos</a>
+    <a href="cumpleanos-infantiles.html" data-lang="es">Cumpleaños infantiles</a>
     <a href="contacto.html" data-lang="es">Contacto</a>
     <a href="contacto.html" class="btn btn-primary" style="margin-top:1rem" data-lang="es">Reservar mesa</a>
   </div>
@@ -43,14 +45,19 @@
   <section class="page-hero">
     <div class="container">
       <p class="section-label" data-lang="es">Contacto</p>
-      <h1 data-lang="es">Reserva o escríbenos</h1>
-      <p data-lang="es">Para reservar mesa, eventos o cualquier consulta. Te respondemos en breve.</p>
+      <h1 data-lang="es">Llámanos para reservar</h1>
+      <p data-lang="es">Estamos disponibles en el +34 623 112 264.</p>
     </div>
   </section>
 
   <section class="contact">
     <div class="container">
-      <div class="contact-grid">
+      <div class="contact-phone">
+        <p class="section-label">Reservas y consultas</p>
+        <a class="contact-phone-number" href="tel:+34623112264">+34 623 112 264</a>
+        <p>Llámanos para reservar mesa o consultar una celebración.</p>
+      </div>
+      <div class="contact-grid contact-details">
         <div class="contact-info">
           <h3 data-lang="es">Datos de contacto</h3>
 
@@ -62,17 +69,10 @@
             </div>
           </div>
           <div class="contact-item">
-            <div class="icon">📞</div>
-            <div>
-              <strong data-lang="es">Teléfono / WhatsApp</strong>
-              <p><a href="tel:+34623112264">+34 623 112 264</a></p>
-            </div>
-          </div>
-          <div class="contact-item">
             <div class="icon">🕐</div>
             <div>
               <strong data-lang="es">Horario</strong>
-              <p data-lang="es">Todos los días · 12:30 – 24:00</p>
+              <p><a href="index.html#horarios" data-lang="es">Ver horarios actualizados</a></p>
             </div>
           </div>
           <div class="contact-item">
@@ -86,36 +86,21 @@
           </div>
         </div>
 
-        <div class="contact-form">
-          <h3 data-lang="es">Formulario de contacto</h3>
-          <p class="form-lead" data-lang="es">Reservas, eventos o consultas generales. Te respondemos en breve.</p>
-          <form id="contactForm">
-            <div class="form-row">
-              <div class="form-group">
-                <label data-lang="es">Nombre</label>
-                <input type="text" name="name" required placeholder="Tu nombre" />
-              </div>
-              <div class="form-group">
-                <label>Teléfono / Email</label>
-                <input type="text" name="contact" required placeholder="+34 600 000 000 o email" />
-              </div>
-            </div>
-            <div class="form-group">
-              <label data-lang="es">Tipo de consulta</label>
-              <select name="type">
-                <option value="reserva" data-lang="es">Reserva de mesa</option>
-                <option value="evento" data-lang="es">Evento / celebración</option>
-                <option value="otro" data-lang="es">Otra consulta</option>
-              </select>
-            </div>
-            <div class="form-group">
-              <label data-lang="es">Mensaje</label>
-              <textarea name="message" required placeholder="Fecha, hora, número de personas, detalles del evento..."></textarea>
-            </div>
-            <button type="submit" class="btn btn-primary form-submit" data-lang="es">Enviar mensaje</button>
-          </form>
-        </div>
       </div>
+
+      <section class="hours contact-hours">
+        <p class="section-label" data-lang="es">Te esperamos</p>
+        <h2 class="section-title" data-lang="es">Horarios de apertura</h2>
+        <div class="hours-grid">
+          <div class="hours-row"><strong>Viernes</strong><span>12:30–02:00</span></div>
+          <div class="hours-row"><strong>Sábado</strong><span>12:30–02:00</span></div>
+          <div class="hours-row"><strong>Domingo</strong><span>12:30–24:00</span></div>
+          <div class="hours-row"><strong>Lunes</strong><span>12:30–20:00</span></div>
+          <div class="hours-row"><strong>Martes</strong><span>12:30–20:00</span></div>
+          <div class="hours-row"><strong>Miércoles</strong><span>12:30–20:00</span></div>
+          <div class="hours-row"><strong>Jueves</strong><span>12:30–20:00</span></div>
+        </div>
+      </section>
 
       <div class="map-wrap">
         <iframe
@@ -134,7 +119,7 @@
       <div class="footer-grid">
         <div class="footer-brand">
           <a href="index.html" class="logo"><img class="brand-mark" src="assets/branding/logo-la-terraza.png" alt="" />La Terraza</a>
-          <p data-lang="es">Restaurante con gran terraza en Otura (Granada). Cocina mediterránea y ambiente familiar. Abierto de 12:30 a 24:00.</p>
+          <p data-lang="es">Restaurante con gran terraza en Otura (Granada). Cocina mediterránea y ambiente familiar.</p>
           <div class="footer-social">
             <a href="https://www.instagram.com/la_terraza_otura/" aria-label="Instagram" target="_blank" rel="noopener noreferrer">📷</a>
             <a href="#" aria-label="Facebook">📘</a>
@@ -156,7 +141,7 @@
             <li><a href="tel:+34623112264">+34 623 112 264</a></li>
             <li>Carretera Otura Dílar s/n</li>
             <li>18630 Otura, Granada</li>
-            <li data-lang="es">12:30 – 24:00 todos los días</li>
+            <li><a href="index.html#horarios" data-lang="es">Consultar horarios</a></li>
           </ul>
         </div>
         <div>
