@@ -41,6 +41,39 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
+  document.querySelectorAll('.gallery-category').forEach(category => {
+    const carousel = category.querySelector('.gallery-grid');
+    const items = Array.from(carousel.querySelectorAll('.gallery-item'));
+    const previousButton = category.querySelector('[data-gallery-direction="-1"]');
+    const nextButton = category.querySelector('[data-gallery-direction="1"]');
+    const position = category.querySelector('.gallery-position');
+
+    const updateControls = () => {
+      const carouselLeft = carousel.getBoundingClientRect().left;
+      const currentIndex = items.reduce((closestIndex, item, index) => {
+        const closestDistance = Math.abs(items[closestIndex].getBoundingClientRect().left - carouselLeft);
+        const itemDistance = Math.abs(item.getBoundingClientRect().left - carouselLeft);
+        return itemDistance < closestDistance ? index : closestIndex;
+      }, 0);
+
+      position.textContent = `${currentIndex + 1} / ${items.length}`;
+      previousButton.disabled = carousel.scrollLeft <= 1;
+      nextButton.disabled = carousel.scrollLeft + carousel.clientWidth >= carousel.scrollWidth - 1;
+    };
+
+    previousButton.addEventListener('click', () => {
+      const itemWidth = items[0].getBoundingClientRect().width;
+      carousel.scrollBy({ left: -(itemWidth + parseFloat(getComputedStyle(carousel).gap)), behavior: 'smooth' });
+    });
+    nextButton.addEventListener('click', () => {
+      const itemWidth = items[0].getBoundingClientRect().width;
+      carousel.scrollBy({ left: itemWidth + parseFloat(getComputedStyle(carousel).gap), behavior: 'smooth' });
+    });
+    carousel.addEventListener('scroll', updateControls, { passive: true });
+    window.addEventListener('resize', updateControls);
+    updateControls();
+  });
+
   // Reveal sections as they enter the viewport.
   const revealItems = document.querySelectorAll('section:not(.hero), .footer');
   const revealObserver = new IntersectionObserver((entries, observer) => {
