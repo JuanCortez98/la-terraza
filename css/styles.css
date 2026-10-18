@@ -1471,11 +1471,16 @@ section { padding: 5.5rem 0; }
   box-shadow: var(--shadow);
 }
 
-.map-wrap iframe {
+.map-wrap iframe,
+.map-wrap img {
   width: 100%;
   height: 100%;
   border: 0;
+  object-fit: cover;
+  object-position: 50% 42%;
 }
+.map-wrap:has(img) { height: 520px; }
+@media (max-width: 700px) { .map-wrap:has(img) { height: 380px; } }
 
 .map-card {
   margin-top: 1rem;
