@@ -739,6 +739,17 @@ section { padding: 5.5rem 0; }
   gap: 1.5rem 3rem;
 }
 
+.menu-subheading {
+  margin: 2rem 0 1rem;
+  font-size: 0.8rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--gold-dark, var(--green-mid));
+  font-weight: 600;
+}
+.menu-panel-heading + .menu-subheading { margin-top: 0; }
+.menu-item p strong { color: var(--green-dark); font-weight: 600; }
+
 .menu-item {
   display: grid;
   grid-template-columns: 1fr auto;
