@@ -1089,6 +1089,18 @@ section { padding: 5.5rem 0; }
   line-height: 1.55;
 }
 
+.experience-light { background: var(--white); color: var(--text); }
+.experience-light::before { content: none; }
+.experience-light .section-label { color: var(--green-light); }
+.experience-light .section-title { color: var(--green-dark); }
+.experience-light .exp-card {
+  background: var(--cream);
+  border-color: var(--cream-dark);
+}
+.experience-light .exp-card:hover { background: var(--cream-dark); }
+.experience-light .exp-card h3 { color: var(--green-dark); }
+.experience-light .exp-card p { color: var(--text-light); }
+
 /* ========== EVENTS ========== */
 .events { background: var(--cream); }
 
