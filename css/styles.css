@@ -1526,7 +1526,7 @@ section { padding: 5.5rem 0; }
 .footer-grid {
   display: grid;
   grid-template-columns: 1.4fr 1fr 1fr 1fr 1.2fr;
-  gap: 2.5rem;
+  gap: 3.5rem;
   margin-bottom: 2.5rem;
 }
 
@@ -1688,7 +1688,7 @@ section { padding: 5.5rem 0; }
     
   }
   .gallery-category { --gallery-item-height: 280px; }
-  .footer-grid { grid-template-columns: 1fr 1fr; }
+  .footer-grid { grid-template-columns: 1fr 1fr; gap: 2.5rem; }
   .form-row { grid-template-columns: 1fr; }
 }
 
