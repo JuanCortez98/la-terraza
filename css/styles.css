@@ -1491,6 +1491,14 @@ section { padding: 5.5rem 0; }
 .cta-strip.cta-about { background: var(--white); }
 .cta-strip.cta-about h2 { color: var(--green-dark); }
 .cta-strip.cta-about p { color: var(--text-light); }
+.cta-strip.cta-about .btn-outline {
+  color: var(--green-dark);
+  border-color: var(--green-dark);
+}
+.cta-strip.cta-about .btn-outline:hover {
+  background: var(--green-dark);
+  color: var(--white);
+}
 
 /* ========== FOOTER ========== */
 .footer {
