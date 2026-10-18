@@ -45,7 +45,7 @@ const server = http.createServer((request, response) => {
     const isAsset = ['.jpg', '.jpeg', '.png', '.webp', '.svg', '.ico', '.mp4'].includes(extension);
     const headers = {
       'Content-Type': contentTypes[extension] || 'application/octet-stream',
-      'Cache-Control': isAsset ? 'public, max-age=2592000' : 'public, max-age=300'
+      'Cache-Control': isAsset ? 'public, max-age=2592000' : 'no-cache'
     };
     const compressible = ['.html', '.css', '.js', '.svg'].includes(extension)
       && /\bgzip\b/.test(request.headers['accept-encoding'] || '');
