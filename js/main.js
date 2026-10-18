@@ -155,4 +155,36 @@ document.addEventListener('DOMContentLoaded', () => {
     item.classList.add('reveal');
     revealObserver.observe(item);
   });
+
+  // Preload internal pages so navigation feels instant.
+  const pageLinks = Array.from(new Set(
+    Array.from(document.querySelectorAll('a[href]'))
+      .map(link => new URL(link.getAttribute('href'), location.href))
+      .filter(url => url.origin === location.origin && url.pathname.endsWith('.html') && url.pathname !== location.pathname)
+      .map(url => url.pathname)
+  ));
+
+  if (HTMLScriptElement.supports && HTMLScriptElement.supports('speculationrules')) {
+    const rules = document.createElement('script');
+    rules.type = 'speculationrules';
+    rules.textContent = JSON.stringify({ prerender: [{ source: 'list', urls: pageLinks, eagerness: 'moderate' }] });
+    document.head.appendChild(rules);
+  } else {
+    const prefetched = new Set();
+    const prefetch = (pathname) => {
+      if (prefetched.has(pathname)) return;
+      prefetched.add(pathname);
+      const link = document.createElement('link');
+      link.rel = 'prefetch';
+      link.href = pathname;
+      document.head.appendChild(link);
+    };
+    const warmUp = () => pageLinks.forEach(prefetch);
+    if ('requestIdleCallback' in window) requestIdleCallback(warmUp, { timeout: 3000 });
+    else setTimeout(warmUp, 2000);
+    document.addEventListener('touchstart', event => {
+      const link = event.target.closest && event.target.closest('a[href]');
+      if (link) prefetch(new URL(link.getAttribute('href'), location.href).pathname);
+    }, { passive: true });
+  }
 });
