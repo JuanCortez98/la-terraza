@@ -579,7 +579,7 @@ section { padding: 5.5rem 0; }
 
 .menu-showcase {
   display: grid;
-  grid-template-columns: 0.8fr 0.8fr 0.8fr 1.2fr;
+  grid-template-columns: 0.8fr 0.8fr 0.8fr 0.8fr 1.2fr;
   gap: 1rem;
   align-items: stretch;
   margin-bottom: 3rem;
@@ -1688,7 +1688,7 @@ section { padding: 5.5rem 0; }
   .about-images { height: 400px; max-width: 480px; margin: 0 auto; }
   .birthday-gallery { min-height: 430px; max-width: 520px; margin: 0 auto; width: 100%; }
   .menu-grid { grid-template-columns: 1fr; }
-  .menu-showcase { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+  .menu-showcase { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .menu-showcase > div { grid-column: 1 / -1; }
   .menu-food-gallery { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .spaces-video { grid-template-columns: 1fr; }
