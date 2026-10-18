@@ -858,6 +858,14 @@ section { padding: 5.5rem 0; }
   grid-row: span 1;
 }
 
+.gallery-heading {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.6rem;
+  font-weight: 600;
+  color: var(--green-dark);
+  text-align: center;
+  margin-bottom: 2.5rem;
+}
 .gallery-category + .gallery-category { margin-top: 5rem; }
 .gallery-category .section-title { margin-bottom: 1.75rem; }
 .gallery-category { --gallery-item-height: 320px; }
