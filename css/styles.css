@@ -489,8 +489,9 @@ section { padding: 5.5rem 0; }
   right: 0;
   bottom: 0;
   width: 48%;
-  height: 260px;
-  object-fit: contain;
+  height: auto;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
   border-radius: var(--radius);
   border: 6px solid var(--white);
   box-shadow: var(--shadow);
@@ -1159,11 +1160,13 @@ section { padding: 5.5rem 0; }
 
 .birthday-photo-detail {
   width: 42%;
-  height: 220px;
+  aspect-ratio: 1;
   right: 0;
   bottom: 0;
   border: 6px solid var(--white);
 }
+
+.birthday-photo-detail-portrait { aspect-ratio: 2 / 3; }
 
 .birthday-copy .section-title em {
   color: var(--green-mid);
@@ -1644,7 +1647,7 @@ section { padding: 5.5rem 0; }
   .birthday-gallery { min-height: 340px; }
   .anniversary-photo { height: 280px; }
   .birthday-photo-main { inset: 0 10% 8% 0; }
-  .birthday-photo-detail { width: 46%; height: 150px; }
+  .birthday-photo-detail { width: 46%; }
   .about-features { grid-template-columns: 1fr; }
   .gallery-category { --gallery-item-height: 300px; }
   .footer-grid { grid-template-columns: 1fr; }
