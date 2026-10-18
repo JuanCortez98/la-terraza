@@ -803,6 +803,9 @@ section { padding: 5.5rem 0; }
 
 .menu-source-actions .btn { font-size: 0.85rem; }
 
+.menu-section:has(.menu-source) { padding-bottom: 1.5rem; }
+.cta-strip.cta-compact { padding-top: 2rem; padding-bottom: 2.5rem; }
+
 /* ========== GALLERY ========== */
 .gallery { background: var(--white); padding-bottom: 4rem; }
 
