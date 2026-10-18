@@ -1463,6 +1463,21 @@ section { padding: 5.5rem 0; }
   border: 0;
 }
 
+.map-card {
+  margin-top: 1rem;
+  padding: 1.25rem 1.5rem;
+  background: var(--white);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+}
+.map-card strong { display: block; color: var(--green-dark); font-size: 1.1rem; }
+.map-card span { color: var(--text-light); font-size: 0.95rem; }
+
 /* ========== CTA STRIP ========== */
 .cta-strip {
   background: var(--green-dark);
