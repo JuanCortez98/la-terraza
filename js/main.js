@@ -188,3 +188,22 @@ document.addEventListener('DOMContentLoaded', () => {
     }, { passive: true });
   }
 });
+
+document.addEventListener('click', event => {
+  const link = event.target.closest && event.target.closest('a[data-lightbox]');
+  if (!link) return;
+  event.preventDefault();
+  const box = document.createElement('div');
+  box.className = 'lightbox';
+  box.setAttribute('role', 'dialog');
+  box.innerHTML = '<button class="lightbox-close" type="button" aria-label="Cerrar">&times;</button>';
+  const img = document.createElement('img');
+  img.src = link.href;
+  img.alt = link.querySelector('img') ? link.querySelector('img').alt : '';
+  box.appendChild(img);
+  const close = () => { box.remove(); document.removeEventListener('keydown', onKey); };
+  const onKey = e => { if (e.key === 'Escape') close(); };
+  box.addEventListener('click', close);
+  document.addEventListener('keydown', onKey);
+  document.body.appendChild(box);
+});

@@ -1829,3 +1829,9 @@ section { padding: 5.5rem 0; }
 .kids-flyers a { display: block; border-radius: var(--radius); overflow: hidden; box-shadow: var(--shadow); }
 .kids-flyers img { display: block; width: 100%; height: auto; }
 @media (max-width: 640px) { .kids-flyers { grid-template-columns: 1fr; } }
+.kids-flyers-single { grid-template-columns: minmax(0, 420px); justify-content: center; }
+.center-action { display: flex; justify-content: center; margin-top: 1.5rem; }
+.lightbox { position: fixed; inset: 0; z-index: 3000; display: flex; align-items: center; justify-content: center; padding: 1.5rem; background: rgba(0,0,0,0.35); backdrop-filter: blur(6px); cursor: zoom-out; }
+.lightbox img { max-width: 100%; max-height: 100%; border-radius: 12px; box-shadow: 0 10px 40px rgba(0,0,0,0.35); }
+.lightbox-close { position: absolute; top: 1rem; right: 1.2rem; font-size: 2.2rem; line-height: 1; color: #fff; background: none; border: 0; cursor: pointer; }
+.kids-flyers a[data-lightbox] { cursor: zoom-in; }
