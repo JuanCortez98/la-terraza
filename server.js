@@ -19,6 +19,11 @@ const contentTypes = {
 
 const server = http.createServer((request, response) => {
   const requestPath = decodeURIComponent(request.url.split('?')[0]);
+  if (requestPath === '/galeria.html') {
+    response.writeHead(301, { Location: '/nosotros.html#galeria' });
+    response.end();
+    return;
+  }
   const requestedFile = requestPath === '/' ? '/index.html' : requestPath;
   const filePath = path.resolve(publicDirectory, `.${requestedFile}`);
 

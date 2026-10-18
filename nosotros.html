@@ -11,7 +11,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="css/styles.css" />
 </head>
-<body>
+<body class="gallery-page">
   <header class="header solid" id="header">
     <div class="container header-inner">
       <a href="index.html" class="logo">
@@ -21,7 +21,6 @@
       <nav class="nav">
         <a href="nosotros.html" class="active" data-lang="es">Nosotros</a>
         <a href="carta.html" data-lang="es">Carta</a>
-        <a href="galeria.html" data-lang="es">Galería</a>
         <a href="eventos.html" data-lang="es">Eventos</a>
         <a href="cumpleanos-infantiles.html" data-lang="es">Cumpleaños infantiles</a>
         <a href="contacto.html" data-lang="es">Contacto</a>
@@ -35,7 +34,6 @@
     <button class="close-btn" id="closeNav">×</button>
     <a href="nosotros.html" data-lang="es">Nosotros</a>
     <a href="carta.html" data-lang="es">Carta</a>
-    <a href="galeria.html" data-lang="es">Galería</a>
     <a href="eventos.html" data-lang="es">Eventos</a>
     <a href="cumpleanos-infantiles.html" data-lang="es">Cumpleaños infantiles</a>
     <a href="contacto.html" data-lang="es">Contacto</a>
@@ -129,6 +127,112 @@
     </div>
   </section>
 
+  <section class="gallery" id="galeria">
+    <div class="container">
+      <section class="gallery-category">
+        <p class="section-label" data-lang="es">Para los más pequeños</p>
+        <h2 class="section-title" data-lang="es">Parque infantil</h2>
+        <div class="gallery-carousel-controls">
+          <span class="gallery-position" aria-live="polite">1 / 16</span>
+          <button class="gallery-control" type="button" data-gallery-direction="-1" aria-label="Ver foto anterior del parque infantil" aria-controls="gallery-kids">&larr;</button>
+          <button class="gallery-control" type="button" data-gallery-direction="1" aria-label="Ver foto siguiente del parque infantil" aria-controls="gallery-kids">&rarr;</button>
+        </div>
+        <div class="gallery-grid" id="gallery-kids" role="region" aria-label="Carrusel del parque infantil" tabindex="0">
+          <div class="gallery-item"><img src="assets/cumpleanos/cumpleanos-01.jpg" alt="Niños bajando por el tobogán del parque de bolas" loading="lazy" /></div>
+          <div class="gallery-item"><img src="assets/cumpleanos/cumpleanos-02.jpg" alt="Grupo de niños con una mascota en el parque infantil" loading="lazy" /></div>
+          <div class="gallery-item"><img src="assets/cumpleanos/cumpleanos-03.jpg" alt="Niños jugando en la piscina de bolas" loading="lazy" /></div>
+          <div class="gallery-item"><img src="assets/cumpleanos/cumpleanos-04.jpg" alt="Familia celebrando con una mascota en el comedor" loading="lazy" /></div>
+          <div class="gallery-item"><img src="assets/cumpleanos/cumpleanos-05.jpg" alt="Niños disfrutando de un juego durante la celebración" loading="lazy" /></div>
+          <div class="gallery-item"><img src="assets/cumpleanos/cumpleanos-06.jpg" alt="Un niño comparte una porción de pizza en su cumpleaños" loading="lazy" /></div>
+          <div class="gallery-item"><img src="assets/cumpleanos/cumpleanos-07.jpg" alt="Niños saludando a una mascota en el parque de bolas" loading="lazy" /></div>
+          <div class="gallery-item"><img src="assets/cumpleanos/cumpleanos-08.jpg" alt="Niño jugando al fútbol en la zona infantil" loading="lazy" /></div>
+          <div class="gallery-item"><img src="assets/cumpleanos/cumpleanos-09.jpg" alt="Niñas haciendo una actividad en la zona infantil" loading="lazy" /></div>
+          <div class="gallery-item"><img src="assets/cumpleanos/cumpleanos-10.jpg" alt="Niña jugando en la estructura del parque infantil" loading="lazy" /></div>
+          <div class="gallery-item"><img src="assets/cumpleanos/cumpleanos-11.jpg" alt="Niñas saltando en la cama elástica" loading="lazy" /></div>
+          <div class="gallery-item"><img src="assets/cumpleanos/cumpleanos-12.jpg" alt="Pizza preparada para una celebración infantil" loading="lazy" /></div>
+          <div class="gallery-item"><img src="assets/cumpleanos/cumpleanos-13.jpg" alt="Ración para compartir durante el cumpleaños" loading="lazy" /></div>
+          <div class="gallery-item"><img src="assets/cumpleanos/cumpleanos-14.jpg" alt="Vista amplia del parque de bolas" loading="lazy" /></div>
+          <div class="gallery-item"><img src="assets/cumpleanos/cumpleanos-15.jpg" alt="Niños jugando entre las bolas de colores" loading="lazy" /></div>
+          <div class="gallery-item"><img src="assets/cumpleanos/cumpleanos-16.jpg" alt="Niños disfrutando juntos del tobogán" loading="lazy" /></div>
+        </div>
+      </section>
+
+      <section class="gallery-category">
+        <p class="section-label" data-lang="es">Para comer con calma</p>
+        <h2 class="section-title" data-lang="es">Interiores y salones</h2>
+        <div class="gallery-carousel-controls">
+          <span class="gallery-position" aria-live="polite">1 / 12</span>
+          <button class="gallery-control" type="button" data-gallery-direction="-1" aria-label="Ver foto anterior de interiores y salones" aria-controls="gallery-interiors">&larr;</button>
+          <button class="gallery-control" type="button" data-gallery-direction="1" aria-label="Ver foto siguiente de interiores y salones" aria-controls="gallery-interiors">&rarr;</button>
+        </div>
+        <div class="gallery-grid" id="gallery-interiors" role="region" aria-label="Carrusel de interiores y salones" tabindex="0">
+          <div class="gallery-item"><img src="assets/site-media/GXM_9675.jpg" alt="Comedor interior con vistas a la zona infantil" /></div>
+          <div class="gallery-item"><img src="assets/salones/interior-03.jpg" alt="Salón acogedor con bancos tapizados y mesas" loading="lazy" /></div>
+          <div class="gallery-item"><img src="assets/site-media/GXM_9679.jpg" alt="Comedor con mesas preparadas junto al parque infantil" /></div>
+          <div class="gallery-item"><img src="assets/salones/interior-02.jpg" alt="Salón interior con decoración circular en el techo" loading="lazy" /></div>
+          <div class="gallery-item"><img src="assets/site-media/GXM_9681.jpg" alt="Vista amplia del comedor y la zona infantil" /></div>
+          <div class="gallery-item"><img src="assets/salones/interior-01.jpg" alt="Comensales reunidos en el salón interior" loading="lazy" /></div>
+          <div class="gallery-item"><img src="assets/site-media/GXM_9684.jpg" alt="Mesas preparadas en el salón con pared de piedra" /></div>
+          <div class="gallery-item"><img src="assets/salones/interior-05.jpg" alt="Familia compartiendo una comida en el salón" loading="lazy" /></div>
+          <div class="gallery-item"><img src="assets/site-media/GXM_9792.jpg" alt="Comedor interior junto a la zona infantil" /></div>
+          <div class="gallery-item"><img src="assets/salon-chimenea-1.png" alt="Salón con chimenea y mesas ocupadas en La Terraza" loading="lazy" /></div>
+          <div class="gallery-item"><img src="assets/site-media/GXM_9799.jpg" alt="Familia disfrutando de una comida en el salón" /></div>
+          <div class="gallery-item"><img src="assets/salones/interior-04.jpg" alt="Salón interior con chimenea y mesas preparadas" loading="lazy" /></div>
+        </div>
+      </section>
+
+      <section class="gallery-category">
+        <p class="section-label" data-lang="es">Al aire libre</p>
+        <h2 class="section-title" data-lang="es">Terrazas</h2>
+        <div class="gallery-carousel-controls">
+          <span class="gallery-position" aria-live="polite">1 / 9</span>
+          <button class="gallery-control" type="button" data-gallery-direction="-1" aria-label="Ver foto anterior de las terrazas" aria-controls="gallery-terraces">&larr;</button>
+          <button class="gallery-control" type="button" data-gallery-direction="1" aria-label="Ver foto siguiente de las terrazas" aria-controls="gallery-terraces">&rarr;</button>
+        </div>
+        <div class="gallery-grid" id="gallery-terraces" role="region" aria-label="Carrusel de terrazas" tabindex="0">
+          <div class="gallery-item"><img src="assets/terrazas/terraza-01.jpg" alt="Vista amplia de la terraza exterior de La Terraza al atardecer" loading="lazy" /></div>
+          <div class="gallery-item"><img src="assets/terrazas/terraza-02.jpg" alt="Mesas ocupadas en la terraza exterior" loading="lazy" /></div>
+          <div class="gallery-item"><img src="assets/terrazas/terraza-03.jpg" alt="Terraza de La Terraza con el restaurante al fondo" loading="lazy" /></div>
+          <div class="gallery-item"><img src="assets/terrazas/terraza-04.jpg" alt="Ambiente nocturno en la terraza exterior" loading="lazy" /></div>
+          <div class="gallery-item"><img src="assets/terrazas/terraza-05.jpg" alt="Ambiente de cena y música en directo en la terraza" loading="lazy" /></div>
+          <div class="gallery-item"><img src="assets/terrazas/terraza-06.jpg" alt="Clientes cenando en la terraza exterior" loading="lazy" /></div>
+          <div class="gallery-item"><img src="assets/terrazas/terraza-07.jpg" alt="Vista diurna del restaurante y su terraza" loading="lazy" /></div>
+          <div class="gallery-item"><img src="assets/terrazas/terraza-08.jpg" alt="Comensales disfrutando del ambiente de la terraza" loading="lazy" /></div>
+          <div class="gallery-item"><img src="assets/terrazas/terraza-09.jpg" alt="Terraza exterior al anochecer" loading="lazy" /></div>
+        </div>
+      </section>
+
+      <section class="gallery-category">
+        <p class="section-label" data-lang="es">Momentos para recordar</p>
+        <h2 class="section-title" data-lang="es">Cumpleaños y celebraciones</h2>
+        <div class="gallery-carousel-controls">
+          <span class="gallery-position" aria-live="polite">1 / 17</span>
+          <button class="gallery-control" type="button" data-gallery-direction="-1" aria-label="Ver foto anterior de cumpleaños y celebraciones" aria-controls="gallery-celebrations">&larr;</button>
+          <button class="gallery-control" type="button" data-gallery-direction="1" aria-label="Ver foto siguiente de cumpleaños y celebraciones" aria-controls="gallery-celebrations">&rarr;</button>
+        </div>
+        <div class="gallery-grid" id="gallery-celebrations" role="region" aria-label="Carrusel de cumpleaños y celebraciones" tabindex="0">
+          <div class="gallery-item"><img src="assets/celebraciones/celebracion-01.png" alt="Pareja celebrando un cumpleaños con una tarta" loading="lazy" /></div>
+          <div class="gallery-item"><img src="assets/celebraciones/celebracion-02.jpg" alt="Amigos brindando durante una comida" loading="lazy" /></div>
+          <div class="gallery-item"><img src="assets/celebraciones/celebracion-03.jpg" alt="Pareja compartiendo un momento especial en la terraza" loading="lazy" /></div>
+          <div class="gallery-item"><img src="assets/celebraciones/celebracion-04.jpg" alt="Celebración con amigos en la terraza de La Terraza" loading="lazy" /></div>
+          <div class="gallery-item"><img src="assets/celebraciones/celebracion-05.jpg" alt="Grupo brindando alrededor de una mesa" loading="lazy" /></div>
+          <div class="gallery-item"><img src="assets/celebraciones/celebracion-06.jpg" alt="Amigos celebrando juntos en la terraza" loading="lazy" /></div>
+          <div class="gallery-item"><img src="assets/site-media/3H8A2559.jpg" alt="Celebración en la terraza de La Terraza" /></div>
+          <div class="gallery-item"><img src="assets/site-media/3H8A2610.jpg" alt="Evento con clientes en La Terraza" /></div>
+          <div class="gallery-item"><img src="assets/site-media/3H8A2617.jpg" alt="Ambiente nocturno durante una celebración" /></div>
+          <div class="gallery-item"><img src="assets/site-media/3H8A2729.jpg" alt="Música en directo durante un evento" /></div>
+          <div class="gallery-item"><img src="assets/site-media/3H8A2839.jpg" alt="Actuación musical en La Terraza" /></div>
+          <div class="gallery-item"><img src="assets/site-media/GXM_0365.jpg" alt="Celebración con amigos en La Terraza" /></div>
+          <div class="gallery-item"><img src="assets/galeria-celebracion-buffet.jpeg" alt="Mesa de aperitivos preparada para una celebración" /></div>
+          <div class="gallery-item"><img src="assets/galeria-celebracion-ambiente.jpeg" alt="Invitados compartiendo una celebración en el salón" /></div>
+          <div class="gallery-item"><img src="assets/galeria-celebracion-mesa.jpeg" alt="Detalle de una mesa preparada para una celebración familiar" /></div>
+          <div class="gallery-item"><img src="assets/cumpleanos-aniversario-1.jpeg" alt="Cumpleaños infantil con una mascota en La Terraza" loading="lazy" /></div>
+          <div class="gallery-item"><img src="assets/cumpleanos-aniversario-2.jpeg" alt="Niñas celebrando un cumpleaños con una mascota en La Terraza" loading="lazy" /></div>
+        </div>
+      </section>
+    </div>
+  </section>
+
   <section class="cta-strip cta-about">
     <div class="container">
       <h2 data-lang="es">¿Te apetece conocernos?</h2>
@@ -152,7 +256,6 @@
           <ul>
             <li><a href="nosotros.html" data-lang="es">Nosotros</a></li>
             <li><a href="carta.html" data-lang="es">Carta</a></li>
-            <li><a href="galeria.html" data-lang="es">Galería</a></li>
             <li><a href="eventos.html" data-lang="es">Eventos</a></li>
           </ul>
         </div>
