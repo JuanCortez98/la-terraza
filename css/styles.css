@@ -239,23 +239,22 @@ a { color: inherit; text-decoration: none; }
 }
 .page-hero-about::before {
   background-image: linear-gradient(135deg, rgba(26,46,26,0.58) 0%, rgba(26,46,26,0.38) 100%), url('../assets/portada-nosotros.jpg');
-  background-position: center, center;
-  background-size: auto, cover;
-  background-repeat: no-repeat;
-  filter: blur(8px);
-  transform: scale(1.04);
-}
-.page-hero-about::after {
-  content: '';
-  position: absolute;
-  inset: 0;
-  z-index: 1;
-  background-image: linear-gradient(135deg, rgba(26,46,26,0.18) 0%, rgba(26,46,26,0.12) 100%), url('../assets/portada-nosotros.jpg');
-  background-position: center, center 50%;
+  background-position: center, center 52%;
   background-size: auto, cover;
   background-repeat: no-repeat;
 }
-.page-hero-about { min-height: 560px; display: flex; align-items: center; }
+.page-hero-about {
+  width: min(1225px, calc(100% - 2rem));
+  height: 575px;
+  margin: 6.5rem auto 0;
+  padding: 0;
+  border-radius: var(--radius);
+  display: flex;
+  align-items: center;
+}
+@media (max-width: 700px) {
+  .page-hero-about { height: 420px; margin-top: 5.5rem; width: calc(100% - 1.5rem); }
+}
 .page-hero::before { background-position: center, center 45%; }
 .page-hero-menu::before { background-position: center, center 52%; }
 .page-hero-contact::before { background-position: center, center top; }
