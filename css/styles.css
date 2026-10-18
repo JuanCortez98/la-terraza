@@ -1531,6 +1531,7 @@ section { padding: 5.5rem 0; }
 }
 
 .footer-brand .logo { margin-bottom: 1rem; }
+.footer-grid > div:nth-child(4) { padding-left: 1.5rem; }
 
 .footer-brand p {
   font-size: 0.92rem;
@@ -1689,6 +1690,7 @@ section { padding: 5.5rem 0; }
   }
   .gallery-category { --gallery-item-height: 280px; }
   .footer-grid { grid-template-columns: 1fr 1fr; gap: 2.5rem; }
+  .footer-grid > div:nth-child(4) { padding-left: 0; }
   .form-row { grid-template-columns: 1fr; }
 }
 
