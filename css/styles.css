@@ -1486,6 +1486,7 @@ section { padding: 5.5rem 0; }
 
 .cta-strip .hero-actions {
   justify-content: center;
+  align-items: center;
   margin-bottom: 0;
 }
 .cta-strip.cta-about { background: var(--white); }
