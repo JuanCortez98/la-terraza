@@ -866,7 +866,10 @@ section { padding: 5.5rem 0; }
   text-align: center;
   margin-bottom: 2.5rem;
 }
-.gallery-category + .gallery-category { margin-top: 5rem; }
+.gallery-category { padding: 0; }
+.gallery-category + .gallery-category { margin-top: 2.5rem; }
+.gallery-page .about { padding-bottom: 2.5rem; }
+.gallery-page .gallery { padding-top: 2.5rem; padding-bottom: 3rem; }
 .gallery-category .section-title { margin-bottom: 1.75rem; }
 .gallery-category { --gallery-item-height: 320px; }
 .gallery-carousel-controls {
