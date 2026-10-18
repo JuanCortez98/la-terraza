@@ -1771,7 +1771,8 @@ section { padding: 5.5rem 0; }
   .birthday-menu-grid { grid-template-columns: 1fr 1fr; }
 }
 @media (max-width: 560px) {
-  .call-float { right: 1rem; left: 1rem; bottom: 1rem; width: auto; }
+  .call-float { right: 1rem; bottom: 1rem; left: auto; width: auto; min-height: 46px; padding: .6rem 1rem; font-size: .9rem; }
+  .logo .brand-copy span { display: none; }
   .home-birthday-media img, .birthday-viewpoint-grid > img { height: 300px; }
   .home-birthday-copy .hero-actions { display: grid; }
   .birthday-menu-grid { grid-template-columns: 1fr; }
