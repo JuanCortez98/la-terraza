@@ -26,6 +26,36 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
+  const menuImages = document.querySelectorAll('.menu-showcase img');
+  if (menuImages.length && typeof HTMLDialogElement !== 'undefined') {
+    const imageDialog = document.createElement('dialog');
+    imageDialog.className = 'menu-image-dialog';
+    imageDialog.setAttribute('aria-label', 'Imagen ampliada del menú');
+    imageDialog.innerHTML = '<button type="button" aria-label="Cerrar imagen ampliada">×</button><img alt="">';
+    document.body.append(imageDialog);
+    const expandedImage = imageDialog.querySelector('img');
+    imageDialog.querySelector('button').addEventListener('click', () => imageDialog.close());
+    imageDialog.addEventListener('click', event => {
+      if (event.target === imageDialog) imageDialog.close();
+    });
+    menuImages.forEach(image => {
+      image.tabIndex = 0;
+      image.setAttribute('role', 'button');
+      image.setAttribute('aria-label', `Ampliar: ${image.alt}`);
+      const openImage = () => {
+        expandedImage.src = image.currentSrc || image.src;
+        expandedImage.alt = image.alt;
+        imageDialog.showModal();
+      };
+      image.addEventListener('click', openImage);
+      image.addEventListener('keydown', event => {
+        if (event.key !== 'Enter' && event.key !== ' ') return;
+        event.preventDefault();
+        openImage();
+      });
+    });
+  }
+
   // Menu tabs
   document.querySelectorAll('.menu-tab').forEach(tab => {
     tab.addEventListener('click', () => {
@@ -72,6 +102,43 @@ document.addEventListener('DOMContentLoaded', () => {
     carousel.addEventListener('scroll', updateControls, { passive: true });
     window.addEventListener('resize', updateControls);
     updateControls();
+  });
+
+  // Branded placeholders keep the layout intact until the restaurant media is added.
+  const escapeXml = (value) => value.replace(/[<>&"']/g, character => ({
+    '<': '&lt;', '>': '&gt;', '&': '&amp;', '"': '&quot;', "'": '&apos;'
+  }[character]));
+
+  document.querySelectorAll('img').forEach(image => {
+    image.addEventListener('error', () => {
+      if (image.dataset.placeholderApplied) return;
+      image.dataset.placeholderApplied = 'true';
+      if (image.classList.contains('brand-mark')) {
+        image.style.visibility = 'hidden';
+        return;
+      }
+      const label = escapeXml((image.alt || 'Fotografía pendiente').slice(0, 72));
+      const artwork = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900"><defs><linearGradient id="g" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#d8c79f"/><stop offset="1" stop-color="#82927b"/></linearGradient></defs><rect width="1600" height="900" fill="url(#g)"/><circle cx="1320" cy="180" r="160" fill="#f5efdf" fill-opacity=".45"/><path d="M0 700 500 420l310 210 330-300 460 370v200H0z" fill="#234b38" fill-opacity=".28"/><text x="800" y="760" text-anchor="middle" font-family="Arial,sans-serif" font-size="34" fill="#183a2b">${label}</text></svg>`;
+      image.classList.add('image-placeholder');
+      image.alt = `${image.alt || 'Fotografía'} · pendiente de incorporar`;
+      image.src = `data:image/svg+xml;charset=utf-8,${encodeURIComponent(artwork)}`;
+    }, { once: true });
+  });
+
+  document.querySelectorAll('video').forEach(video => {
+    const showVideoPlaceholder = () => {
+      const holder = video.parentElement;
+      if (!holder || holder.querySelector('.video-pending-message')) return;
+      holder.classList.add('video-pending-holder');
+      const message = document.createElement('span');
+      message.className = 'video-pending-message';
+      message.textContent = 'Espacio reservado para el vídeo';
+      holder.append(message);
+    };
+    video.addEventListener('error', showVideoPlaceholder);
+    video.querySelectorAll('source').forEach(source => source.addEventListener('error', showVideoPlaceholder));
+    video.addEventListener('loadeddata', () => holder.querySelector('.video-pending-message')?.remove());
+    const holder = video.parentElement;
   });
 
   // Reveal sections as they enter the viewport.
