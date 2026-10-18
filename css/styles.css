@@ -296,7 +296,7 @@ a { color: inherit; text-decoration: none; }
   inset: 0;
   background:
     linear-gradient(135deg, rgba(26,46,26,0.82) 0%, rgba(26,46,26,0.55) 50%, rgba(15,15,15,0.7) 100%),
-    url('../la terraza otura/GXM_9679.jpg') center/cover no-repeat;
+    url('../assets/site-media/GXM_9679.jpg') center/cover no-repeat;
   background-position: center, center 48%;
 }
 
