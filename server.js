@@ -1,6 +1,7 @@
 const http = require('node:http');
 const fs = require('node:fs');
 const path = require('node:path');
+const zlib = require('node:zlib');
 
 const publicDirectory = __dirname;
 const port = Number(process.env.PORT) || 3000;
@@ -40,9 +41,25 @@ const server = http.createServer((request, response) => {
       return;
     }
 
-    response.writeHead(200, {
-      'Content-Type': contentTypes[path.extname(filePath).toLowerCase()] || 'application/octet-stream'
-    });
+    const extension = path.extname(filePath).toLowerCase();
+    const isAsset = ['.jpg', '.jpeg', '.png', '.webp', '.svg', '.ico', '.mp4'].includes(extension);
+    const headers = {
+      'Content-Type': contentTypes[extension] || 'application/octet-stream',
+      'Cache-Control': isAsset ? 'public, max-age=2592000' : 'public, max-age=300'
+    };
+    const compressible = ['.html', '.css', '.js', '.svg'].includes(extension)
+      && /\bgzip\b/.test(request.headers['accept-encoding'] || '');
+
+    if (compressible) {
+      headers['Content-Encoding'] = 'gzip';
+      headers.Vary = 'Accept-Encoding';
+      response.writeHead(200, headers);
+      fs.createReadStream(filePath).pipe(zlib.createGzip()).pipe(response);
+      return;
+    }
+
+    headers['Content-Length'] = stats.size;
+    response.writeHead(200, headers);
     fs.createReadStream(filePath).pipe(response);
   });
 });
