@@ -238,23 +238,24 @@ a { color: inherit; text-decoration: none; }
   background-image: linear-gradient(135deg, rgba(26,46,26,0.58) 0%, rgba(26,46,26,0.38) 100%), url('../assets/portada-galeria.png');
 }
 .page-hero-about::before {
-  background-image: linear-gradient(135deg, rgba(26,46,26,0.58) 0%, rgba(26,46,26,0.38) 100%), url('../assets/portada-nosotros.jpg');
-  background-position: center, center 52%;
+  background-image: linear-gradient(135deg, rgba(26,46,26,0.58) 0%, rgba(26,46,26,0.38) 100%), url('../assets/portada-nosotros-2.jpg');
+  background-position: center, center;
+  background-size: auto, cover;
+  background-repeat: no-repeat;
+  filter: blur(8px);
+  transform: scale(1.04);
+}
+.page-hero-about::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  background-image: linear-gradient(135deg, rgba(26,46,26,0.18) 0%, rgba(26,46,26,0.12) 100%), url('../assets/portada-nosotros-2.jpg');
+  background-position: center, center 50%;
   background-size: auto, cover;
   background-repeat: no-repeat;
 }
-.page-hero-about {
-  width: min(1225px, calc(100% - 2rem));
-  height: 575px;
-  margin: 6.5rem auto 0;
-  padding: 0;
-  border-radius: var(--radius);
-  display: flex;
-  align-items: center;
-}
-@media (max-width: 700px) {
-  .page-hero-about { height: 420px; margin-top: 5.5rem; width: calc(100% - 1.5rem); }
-}
+.page-hero-about { min-height: 560px; display: flex; align-items: center; }
 .page-hero::before { background-position: center, center 45%; }
 .page-hero-menu::before { background-position: center, center 52%; }
 .page-hero-contact::before { background-position: center, center top; }
@@ -1823,3 +1824,8 @@ section { padding: 5.5rem 0; }
 .image-placeholder { background: var(--cream); }
 .video-pending-holder { position: relative; }
 .video-pending-message { position: absolute; inset: 0; z-index: 2; display: grid; place-items: center; padding: 1rem; background: linear-gradient(140deg, rgba(232,223,203,.96), rgba(200,183,143,.96)); color: var(--green-dark); font-weight: 600; text-align: center; pointer-events: none; }
+
+.kids-flyers { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1.5rem; max-width: 900px; margin: 2rem auto; }
+.kids-flyers a { display: block; border-radius: var(--radius); overflow: hidden; box-shadow: var(--shadow); }
+.kids-flyers img { display: block; width: 100%; height: auto; }
+@media (max-width: 640px) { .kids-flyers { grid-template-columns: 1fr; } }
