@@ -1608,11 +1608,16 @@ section { padding: 5.5rem 0; }
   border-top: 1px solid rgba(255,255,255,0.1);
   padding-top: 1.5rem;
   display: flex;
-  justify-content: space-between;
+  flex-direction: column;
+  align-items: center;
   flex-wrap: wrap;
-  gap: 1rem;
+  gap: 0.35rem;
   font-size: 0.85rem;
+  text-align: center;
 }
+
+.footer-bottom .footer-legal a { color: inherit; }
+.footer-bottom .footer-credit { margin-top: 0.25rem; opacity: 0.85; letter-spacing: 0.03em; }
 
 /* ========== PHONE CALL FLOAT ========== */
 .call-float {
