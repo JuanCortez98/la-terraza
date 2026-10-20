@@ -24,7 +24,6 @@
         <a href="eventos.html" class="active" data-lang="es">Eventos</a>
         <a href="cumpleanos-infantiles.html" data-lang="es">Cumpleaños infantiles</a>
         <a href="contacto.html" data-lang="es">Contacto</a>
-        <a href="tel:+34623112264" class="nav-cta">Llamar para reservar</a>
       </nav>
       <button class="burger" id="burger" aria-label="Menú"><span></span><span></span><span></span></button>
     </div>
@@ -37,7 +36,6 @@
     <a href="eventos.html" data-lang="es">Eventos</a>
     <a href="cumpleanos-infantiles.html" data-lang="es">Cumpleaños infantiles</a>
     <a href="contacto.html" data-lang="es">Contacto</a>
-    <a href="tel:+34623112264" class="btn btn-primary" style="margin-top:1rem">Llamar para reservar</a>
   </div>
 
   <section class="page-hero page-hero-events">
@@ -57,9 +55,7 @@
         <div class="events-content">
           <p class="section-label" data-lang="es">Qué ofrecemos</p>
           <h2 class="section-title" data-lang="es">Menús de grupo y<br>celebraciones privadas</h2>
-          <p class="section-lead" data-lang="es">
-            Consulta por teléfono los menús de grupo y las opciones para cumpleaños y celebraciones privadas. Te explicamos qué está disponible para la fecha y el tipo de encuentro que tienes en mente.
-          </p>
+          <p class="section-lead" data-lang="es">Consulta por teléfono los menús de grupo y las opciones para para bautizos, comuniones, cumpleaños o cualquier otra celebración privada. Te explicamos qué está disponible para la fecha y el tipo de encuentro que tienes en mente.</p>
           <ul class="events-list">
             <li data-lang="es">Menús para grupos: consulta condiciones</li>
             <li data-lang="es">Cumpleaños infantiles con zona de juegos</li>
@@ -67,7 +63,6 @@
             <li data-lang="es">Necesidades dietéticas: consulta disponibilidad</li>
             <li data-lang="es">Celebraciones organizadas a medida</li>
           </ul>
-          <a href="tel:+34623112264" class="btn btn-primary">Llamar para consultar opciones</a>
         </div>
       </div>
     </div>
@@ -97,6 +92,22 @@
     </div>
   </section>
 
+  <section class="event-after-ideas">
+    <div class="container">
+      <div class="event-menu-version">
+        <img data-event-menu-image src="assets/menus/menu-eventos-pagina-1.jpg" alt="Menú de eventos estándar" loading="lazy" />
+        <div class="event-menu-version-controls" role="group" aria-label="Versión del menú de eventos">
+          <p class="section-label">Menús para celebraciones</p>
+          <button type="button" class="menu-tab active" data-event-menu-version="standard" aria-pressed="true">Versión estándar</button>
+          <button type="button" class="menu-tab" data-event-menu-version="navidad" aria-pressed="false">Versión Navidad</button>
+          <button type="button" class="btn btn-outline-dark" data-event-menu-open>Ampliar menú</button>
+          <button type="button" data-menu-view="eventos" hidden>Menú estándar</button>
+          <button type="button" data-menu-view="navidad" hidden>Menú Navidad</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <section class="birthday-feature">
     <div class="container birthday-grid">
       <div class="birthday-gallery birthday-video-gallery">
@@ -118,7 +129,6 @@
           <li>Espacio para tarta y celebración</li>
           <li>Opciones para niños y adultos</li>
         </ul>
-        <a href="tel:+34623112264" class="btn btn-primary">Llamar para consultar cumpleaños</a>
       </div>
     </div>
   </section>
@@ -129,11 +139,19 @@
         <p class="section-label">Bautizos y comuniones</p>
         <h2 class="section-title">Un día para celebrar<br><em>en familia</em></h2>
         <p class="section-lead">Celebramos bautizos y comuniones en La Terraza. Consulta por teléfono los espacios, menús y la disponibilidad para bautizos y comuniones.</p>
-        <a href="tel:+34623112264" class="btn btn-primary">Llamar para consultar disponibilidad</a>
       </div>
-      <figure class="anniversary-photo">
-        <img src="assets/eventos/evento-03.jpg" alt="Familia compartiendo una celebración en la terraza" loading="lazy" decoding="async" />
-      </figure>
+      <div class="gallery-category events-baptism-carousel">
+        <div class="gallery-carousel-controls">
+          <span class="gallery-position" aria-live="polite">1 / 3</span>
+          <button class="gallery-control" type="button" data-gallery-direction="-1" aria-label="Ver foto anterior de bautizos y comuniones" aria-controls="baptism-moments">&larr;</button>
+          <button class="gallery-control" type="button" data-gallery-direction="1" aria-label="Ver foto siguiente de bautizos y comuniones" aria-controls="baptism-moments">&rarr;</button>
+        </div>
+        <div class="gallery-grid" id="baptism-moments" role="region" aria-label="Fotos de bautizos y comuniones" tabindex="0">
+          <figure class="gallery-item"><img src="assets/celebraciones/mesa-eventos-01.jpeg" alt="Mesa decorada para una celebración familiar" loading="lazy" /></figure>
+          <figure class="gallery-item"><img src="assets/celebraciones/mesa-eventos-02.jpeg" alt="Salón preparado para un bautizo o comunión" loading="lazy" /></figure>
+          <figure class="gallery-item"><img src="assets/celebraciones/mesa-eventos-03.jpeg" alt="Detalle de una mesa decorada para un evento" loading="lazy" /></figure>
+        </div>
+      </div>
     </div>
   </section>
 
@@ -143,7 +161,6 @@
         <p class="section-label">Aniversarios y fechas especiales</p>
         <h2 class="section-title">Celebra vuestro día<br><em>con una mesa especial</em></h2>
         <p class="section-lead">Para aniversarios y fechas especiales, consulta por teléfono las opciones disponibles y el espacio más adecuado.</p>
-        <a href="tel:+34623112264" class="btn btn-primary">Llamar para consultar aniversario</a>
       </div>
       <figure class="anniversary-photo">
         <img src="assets/eventos/evento-01.jpg" alt="Pareja celebrando una ocasión especial en La Terraza" loading="lazy" decoding="async" />
@@ -168,9 +185,6 @@
     <div class="container">
       <h2 data-lang="es">Cuéntanos tu celebración</h2>
       <p data-lang="es">Llámanos para consultar menús, disponibilidad y detalles.</p>
-      <div class="hero-actions">
-        <a href="tel:+34623112264" class="btn btn-primary">+34 623 112 264</a>
-      </div>
     </div>
   </section>
 
@@ -225,6 +239,6 @@
   </footer>
 
   <script src="js/main.js"></script>
-  <a href="tel:+34623112264" class="call-float" aria-label="Llamar a La Terraza para reservar">☎ <span>Llamar para reservar</span></a>
+  <a href="tel:+34623112264" class="call-float" aria-label="Llamar a La Terraza">☎ <span>Llamar</span></a>
 </body>
 </html>

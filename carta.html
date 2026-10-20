@@ -24,7 +24,6 @@
         <a href="eventos.html" data-lang="es">Eventos</a>
         <a href="cumpleanos-infantiles.html" data-lang="es">Cumpleaños infantiles</a>
         <a href="contacto.html" data-lang="es">Contacto</a>
-        <a href="tel:+34623112264" class="nav-cta">Llamar para reservar</a>
       </nav>
       <button class="burger" id="burger" aria-label="Menú"><span></span><span></span><span></span></button>
     </div>
@@ -37,7 +36,6 @@
     <a href="eventos.html" data-lang="es">Eventos</a>
     <a href="cumpleanos-infantiles.html" data-lang="es">Cumpleaños infantiles</a>
     <a href="contacto.html" data-lang="es">Contacto</a>
-    <a href="tel:+34623112264" class="btn btn-primary" style="margin-top:1rem">Llamar para reservar</a>
   </div>
 
   <section class="page-hero page-hero-menu">
@@ -51,14 +49,23 @@
   <section class="menu-section">
     <div class="container">
       <div class="menu-showcase">
-        <img class="menu-mantel-image" src="assets/menus/mantel-la-terraza.jpg" alt="Mantel con la carta completa de La Terraza" loading="lazy" decoding="async" />
+        <img class="menu-mantel-image" src="assets/menus/mantel-la-terraza.jpg" alt="Mantel con la carta habitual de La Terraza" loading="lazy" decoding="async" />
         <img src="assets/menus/postres-y-meriendas.jpeg" alt="Postres y meriendas de La Terraza" loading="lazy" decoding="async" />
         <img src="assets/menus/cocktails-y-meriendas.jpeg" alt="Cócteles de autor y clásicos         de La Terraza" loading="lazy" decoding="async" />
-                <img src="assets/menu-infantil-1.jpg" alt="Menús de cumpleaños infantiles de La Terraza Park" loading="lazy" decoding="async" />
-                <div>
-                  <p class="section-label">Carta actualizada</p>
+        <img src="assets/menu-infantil-1.jpg" alt="Menús de cumpleaños infantiles de La Terraza Park" loading="lazy" decoding="async" />
+        <div class="menu-event-switch-card">
+          <button type="button" class="menu-document-card" data-menu-view="eventos" aria-label="Ampliar menú seleccionado">
+            <img data-event-menu-image src="assets/menus/menu-eventos-pagina-1.jpg" alt="Menú de eventos estándar, versión 1" loading="lazy" /><span>Menús de eventos</span>
+          </button>
+          <div class="menu-event-version-controls" role="group" aria-label="Versión del menú de eventos">
+            <button type="button" class="menu-tab active" data-event-menu-version="standard" aria-pressed="true">Versión estándar</button>
+            <button type="button" class="menu-tab" data-event-menu-version="navidad" aria-pressed="false">Versión Navidad</button>
+          </div>
+        </div>
+        <div class="menu-showcase-copy">
+          <p class="section-label">Carta actualizada</p>
           <h2>Sabores para cualquier momento</h2>
-          <p>Consulta aquí los platos y precios de la carta actual, organizados por categorías.</p>
+          <p>Consulta aquí los platos y precios de la carta actual, junto a nuestros menús para eventos.</p>
         </div>
       </div>
 
@@ -257,9 +264,7 @@
     <div class="container">
       <h2 data-lang="es">¿Reservamos mesa?</h2>
       <p data-lang="es">Llámanos para consultar la carta y los menús disponibles.</p>
-      <div class="hero-actions">
-        <a href="tel:+34623112264" class="btn btn-primary">+34 623 112 264</a>
-      </div>
+      <div class="hero-actions"><a href="contacto.html" class="btn btn-outline-dark">Contacto</a></div>
     </div>
   </section>
 
@@ -314,6 +319,6 @@
   </footer>
 
   <script src="js/main.js"></script>
-  <a href="tel:+34623112264" class="call-float" aria-label="Llamar a La Terraza para reservar">☎ <span>Llamar para reservar</span></a>
+  <a href="tel:+34623112264" class="call-float" aria-label="Llamar a La Terraza">☎ <span>Llamar</span></a>
 </body>
 </html>

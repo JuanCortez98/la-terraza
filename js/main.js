@@ -26,7 +26,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  const menuImages = document.querySelectorAll('.menu-showcase img');
+  const menuImages = document.querySelectorAll('.menu-showcase img:not(.menu-document-card img)');
   if (menuImages.length && typeof HTMLDialogElement !== 'undefined') {
     const imageDialog = document.createElement('dialog');
     imageDialog.className = 'menu-image-dialog';
@@ -57,7 +57,7 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   // Menu tabs
-  document.querySelectorAll('.menu-tab').forEach(tab => {
+  document.querySelectorAll('.menu-tab[data-tab]').forEach(tab => {
     tab.addEventListener('click', () => {
       const target = tab.dataset.tab;
       document.querySelectorAll('.menu-tab').forEach(item => {
@@ -68,6 +68,71 @@ document.addEventListener('DOMContentLoaded', () => {
       document.querySelectorAll('.menu-panel').forEach(panel => {
         panel.classList.toggle('active', panel.dataset.category === target);
       });
+    });
+  });
+
+  const eventMenuFiles = {
+    standard: 'assets/menus/menu-eventos-pagina-1.jpg',
+    navidad: 'assets/menus/menu-navidad-pagina-1.jpg'
+  };
+  document.querySelectorAll('.event-menu-version, .menu-event-switch-card').forEach(menuCard => {
+    const image = menuCard.querySelector('[data-event-menu-image]');
+    const versionButtons = menuCard.querySelectorAll('[data-event-menu-version]');
+    versionButtons.forEach(button => button.addEventListener('click', () => {
+      const version = button.dataset.eventMenuVersion;
+      image.src = eventMenuFiles[version];
+      image.alt = version === 'navidad' ? 'Menú de eventos, versión Navidad' : 'Menú de eventos estándar, versión 1';
+      versionButtons.forEach(item => {
+        const active = item === button;
+        item.classList.toggle('active', active);
+        item.setAttribute('aria-pressed', String(active));
+      });
+      const previewButton = menuCard.querySelector('[data-menu-view]');
+      if (previewButton) previewButton.dataset.menuView = version === 'navidad' ? 'navidad' : 'eventos';
+    }));
+    const openButton = menuCard.querySelector('[data-event-menu-open]');
+    if (openButton) openButton.addEventListener('click', () => {
+      const version = menuCard.querySelector('[data-event-menu-version].active')?.dataset.eventMenuVersion || 'standard';
+      document.querySelector(`[data-menu-view="${version === 'navidad' ? 'navidad' : 'eventos'}"]`)?.click();
+    });
+  });
+
+  const menuViewImages = {
+    eventos: [1, 2, 3].map(page => `assets/menus/menu-eventos-pagina-${page}.jpg`),
+    navidad: [1, 2, 3].map(page => `assets/menus/menu-navidad-pagina-${page}.jpg`)
+  };
+  document.querySelectorAll('[data-menu-view]').forEach(trigger => {
+    trigger.addEventListener('click', () => {
+      const menuCard = trigger.closest('.menu-event-switch-card');
+      const selectedVersion = menuCard?.querySelector('[data-event-menu-version].active')?.dataset.eventMenuVersion;
+      const view = selectedVersion === 'navidad' ? 'navidad' : trigger.dataset.menuView;
+      const pages = menuViewImages[view];
+      if (!pages) return;
+      const viewer = document.createElement('div');
+      viewer.className = 'menu-lightbox';
+      viewer.setAttribute('role', 'dialog');
+      viewer.setAttribute('aria-modal', 'true');
+      viewer.setAttribute('aria-label', view === 'navidad' ? 'Menús de Navidad' : 'Menús de eventos');
+      viewer.innerHTML = '<button class="menu-lightbox-close" type="button" aria-label="Cerrar">×</button><div class="menu-lightbox-pages"></div>';
+      const pagesContainer = viewer.querySelector('.menu-lightbox-pages');
+      pages.forEach((src, index) => {
+        const image = document.createElement('img');
+        image.src = src;
+        image.alt = `Página ${index + 1} de la carta`;
+        pagesContainer.append(image);
+      });
+      const close = () => {
+        viewer.remove();
+        document.body.classList.remove('menu-lightbox-open');
+        document.removeEventListener('keydown', onKeyDown);
+      };
+      const onKeyDown = event => { if (event.key === 'Escape') close(); };
+      viewer.querySelector('.menu-lightbox-close').addEventListener('click', close);
+      viewer.addEventListener('click', event => { if (event.target === viewer) close(); });
+      document.addEventListener('keydown', onKeyDown);
+      document.body.append(viewer);
+      document.body.classList.add('menu-lightbox-open');
+      viewer.querySelector('.menu-lightbox-close').focus();
     });
   });
 

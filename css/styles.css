@@ -303,7 +303,7 @@ a { color: inherit; text-decoration: none; }
   inset: 0;
   background:
     linear-gradient(135deg, rgba(26,46,26,0.82) 0%, rgba(26,46,26,0.55) 50%, rgba(15,15,15,0.7) 100%),
-    url('../assets/site-media/GXM_9679.jpg') center/cover no-repeat;
+    url('../assets/portada-restaurante.png') center/cover no-repeat;
   background-position: center, center 48%;
 }
 
@@ -579,7 +579,7 @@ section { padding: 5.5rem 0; }
 
 .menu-showcase {
   display: grid;
-  grid-template-columns: 0.8fr 0.8fr 0.8fr 0.8fr 1.2fr;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 1rem;
   align-items: stretch;
   margin-bottom: 3rem;
@@ -599,6 +599,30 @@ section { padding: 5.5rem 0; }
   padding: .35rem;
   background: #fff;
 }
+.menu-showcase .menu-document-card { min-width: 0; }
+.menu-showcase .menu-document-card img { height: 320px; object-fit: contain; background: #fff; }
+.menu-showcase > .menu-event-switch-card { min-width: 0; padding: 0; background: transparent; }
+.menu-event-switch-card .menu-document-card { width: 100%; }
+.menu-event-switch-card .menu-event-version-controls { justify-content: center; gap: .4rem; padding-top: .55rem; }
+.menu-event-switch-card .menu-event-version-controls .menu-tab { padding: .45rem .6rem; font-size: .8rem; }
+.menu-showcase-copy { min-width: 0; }
+.menu-document-card { display: flex; flex-direction: column; align-items: stretch; gap: .6rem; padding: .75rem; border: 1px solid rgba(26,46,26,.12); border-radius: var(--radius); background: var(--white); color: var(--green-dark); font: inherit; font-weight: 600; cursor: pointer; box-shadow: 0 6px 18px rgba(26,46,26,.08); }
+.menu-document-card:hover { transform: translateY(-2px); box-shadow: 0 10px 24px rgba(26,46,26,.15); }
+.menu-document-card span { padding: .35rem; text-align: center; }
+.event-menu-version { display: grid; grid-template-columns: minmax(0, 300px) minmax(220px, 1fr); gap: 1.5rem; align-items: center; max-width: 760px; margin: 2rem auto 3rem; padding: 1rem; background: var(--cream); border-radius: var(--radius); }
+.event-after-ideas { padding: 2rem 0; background: var(--white); }
+.event-menu-version > img { width: 100%; max-height: 420px; object-fit: contain; background: #fff; border-radius: var(--radius); }
+.event-menu-version-controls { display: flex; flex-direction: column; align-items: flex-start; gap: .75rem; }
+.event-menu-version-controls .menu-tab { margin: 0; }
+.event-menu-version-controls .btn { margin-top: .5rem; }
+.menu-lightbox { position: fixed; z-index: 2000; inset: 0; display: flex; align-items: center; justify-content: center; padding: 1rem; background: rgba(0,0,0,.92); }
+.menu-lightbox-pages { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: .6rem; width: min(94vw, 1500px); height: 96vh; align-items: center; }
+.menu-lightbox-pages img { width: 100%; height: 95vh; object-fit: contain; background: #f8f4e9; }
+.menu-lightbox-close { position: fixed; z-index: 1; top: .75rem; right: 1rem; display: grid; place-items: center; width: 3rem; height: 3rem; border: 0; border-radius: 50%; background: #fff; color: #172017; font-size: 2rem; cursor: pointer; }
+.menu-lightbox-open { overflow: hidden; }
+.event-table-gallery { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1rem; margin: 2rem 0 4rem; }
+.event-table-gallery img { width: 100%; height: 340px; object-fit: cover; border-radius: var(--radius); }
+@media (max-width: 700px) { .event-table-gallery { grid-template-columns: 1fr; } .event-table-gallery img { height: 300px; } .event-menu-version { grid-template-columns: 1fr; max-width: 420px; } .event-menu-version > img { width: min(100%, 280px); max-height: 380px; margin-inline: auto; } .menu-lightbox { padding: 4rem 0 1rem; } .menu-lightbox-pages { display: flex; height: 100%; width: 100%; overflow-x: auto; scroll-snap-type: x mandatory; } .menu-lightbox-pages img { flex: 0 0 88vw; width: 88vw; height: 82vh; scroll-snap-align: center; } }
 .menu-image-dialog {
   position: fixed;
   inset: 0;
@@ -1543,7 +1567,7 @@ section { padding: 5.5rem 0; }
 .footer {
   background: var(--green-dark);
   color: rgba(255,255,255,0.75);
-  padding: 3.5rem 0 2rem;
+  padding: 3.5rem 0 0;
 }
 
 .footer-grid {
@@ -1605,19 +1629,25 @@ section { padding: 5.5rem 0; }
 }
 
 .footer-bottom {
-  border-top: 1px solid rgba(255,255,255,0.1);
-  padding-top: 1.5rem;
+  width: 100vw;
+  margin-left: calc(50% - 50vw);
+  padding: 1.1rem 4%;
+  background: #fbe3ed;
+  color: #a65d42;
   display: flex;
   flex-direction: column;
   align-items: center;
-  flex-wrap: wrap;
   gap: 0.35rem;
   font-size: 0.85rem;
   text-align: center;
 }
 
+.footer-bottom .footer-legal { order: 1; }
+.footer-bottom .footer-credit { order: 2; letter-spacing: 0.03em; }
+.footer-bottom > span:first-child { order: 3; }
 .footer-bottom .footer-legal a { color: inherit; }
-.footer-bottom .footer-credit { margin-top: 0.25rem; opacity: 0.85; letter-spacing: 0.03em; }
+.footer-bottom .footer-credit a { font-weight: 500; }
+.footer-bottom a:hover { color: #75412f; }
 
 /* ========== PHONE CALL FLOAT ========== */
 .call-float {
@@ -1840,3 +1870,13 @@ section { padding: 5.5rem 0; }
 .lightbox img { max-width: 100%; max-height: 100%; border-radius: 12px; box-shadow: 0 10px 40px rgba(0,0,0,0.35); }
 .lightbox-close { position: absolute; top: 1rem; right: 1.2rem; font-size: 2.2rem; line-height: 1; color: #fff; background: none; border: 0; cursor: pointer; }
 .kids-flyers a[data-lightbox] { cursor: zoom-in; }
+
+.birthday-feature-video { display: block; width: 100%; height: 500px; min-height: 320px; max-height: 520px; object-fit: cover; border-radius: var(--radius); background: var(--green-dark); }
+
+.events-baptism-carousel { min-width: 0; --gallery-item-height: 360px; }
+.events-baptism-carousel .gallery-grid { display: flex; gap: 1rem; overflow-x: auto; scroll-snap-type: x mandatory; scrollbar-width: none; }
+.events-baptism-carousel .gallery-item { height: var(--gallery-item-height); margin: 0; scroll-snap-align: start; overflow: hidden; border-radius: var(--radius); }
+.events-baptism-carousel .gallery-item img { width: 100%; height: 100%; object-fit: cover; }
+.events-baptism-carousel .gallery-item { flex: 0 0 100%; }
+@media (max-width: 980px) { .events-baptism-carousel { width: 100%; } }
+@media (max-width: 700px) { .events-baptism-carousel { --gallery-item-height: 280px; } }
