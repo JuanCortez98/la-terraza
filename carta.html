@@ -23,7 +23,6 @@
         <a href="carta.html" class="active" data-lang="es">Carta</a>
         <a href="eventos.html" data-lang="es">Eventos</a>
         <a href="cumpleanos-infantiles.html" data-lang="es">Cumpleaños infantiles</a>
-        <a href="contacto.html" data-lang="es">Contacto</a>
       </nav>
       <button class="burger" id="burger" aria-label="Menú"><span></span><span></span><span></span></button>
     </div>
@@ -35,7 +34,6 @@
     <a href="carta.html" data-lang="es">Carta</a>
     <a href="eventos.html" data-lang="es">Eventos</a>
     <a href="cumpleanos-infantiles.html" data-lang="es">Cumpleaños infantiles</a>
-    <a href="contacto.html" data-lang="es">Contacto</a>
   </div>
 
   <section class="page-hero page-hero-menu">
@@ -52,21 +50,6 @@
         <img class="menu-mantel-image" src="assets/menus/mantel-la-terraza.jpg" alt="Mantel con la carta habitual de La Terraza" loading="lazy" decoding="async" />
         <img src="assets/menus/postres-y-meriendas.jpeg" alt="Postres y meriendas de La Terraza" loading="lazy" decoding="async" />
         <img src="assets/menus/cocktails-y-meriendas.jpeg" alt="Cócteles de autor y clásicos         de La Terraza" loading="lazy" decoding="async" />
-        <img src="assets/menu-infantil-1.jpg" alt="Menús de cumpleaños infantiles de La Terraza Park" loading="lazy" decoding="async" />
-        <div class="menu-event-switch-card">
-          <button type="button" class="menu-document-card" data-menu-view="eventos" aria-label="Ampliar menú seleccionado">
-            <img data-event-menu-image src="assets/menus/menu-eventos-pagina-1.jpg" alt="Menú de eventos estándar, versión 1" loading="lazy" /><span>Menús de eventos</span>
-          </button>
-          <div class="menu-event-version-controls" role="group" aria-label="Versión del menú de eventos">
-            <button type="button" class="menu-tab active" data-event-menu-version="standard" aria-pressed="true">Versión estándar</button>
-            <button type="button" class="menu-tab" data-event-menu-version="navidad" aria-pressed="false">Versión Navidad</button>
-          </div>
-        </div>
-        <div class="menu-showcase-copy">
-          <p class="section-label">Carta actualizada</p>
-          <h2>Sabores para cualquier momento</h2>
-          <p>Consulta aquí los platos y precios de la carta actual, junto a nuestros menús para eventos.</p>
-        </div>
       </div>
 
       <div class="gallery-category menu-food-carousel">
@@ -101,14 +84,12 @@
       </div>
 
       <div class="menu-tabs" role="group" aria-label="Categorías de la carta">
-        <button class="menu-tab active" data-tab="entradas" aria-pressed="true">Entradas</button>
-        <button class="menu-tab" data-tab="comidas" aria-pressed="false">Comidas</button>
+        <button class="menu-tab active" data-tab="platos" aria-pressed="true">Menú</button>
         <button class="menu-tab" data-tab="postres" aria-pressed="false">Postres</button>
         <button class="menu-tab" data-tab="demas" aria-pressed="false">Cócteles</button>
-<button class="menu-tab" data-tab="infantil" aria-pressed="false">Infantil</button>
       </div>
 
-      <div class="menu-panel active" id="panel-ensaladas" data-category="entradas">
+      <div class="menu-panel active" id="panel-ensaladas" data-category="platos">
         <h3 class="menu-panel-heading">Ensaladas</h3>
         <div class="menu-grid">
           <div class="menu-item"><h4>Tomate aliñado con melva</h4><span class="price">10,50 €</span></div>
@@ -119,7 +100,7 @@
         </div>
       </div>
 
-      <div class="menu-panel active" id="panel-compartir" data-category="entradas">
+      <div class="menu-panel active" id="panel-compartir" data-category="platos">
         <h3 class="menu-panel-heading">Para compartir</h3>
         <div class="menu-grid">
           <div class="menu-item"><h4>Nachos con carne y cheddar</h4><span class="price">10,50 €</span></div>
@@ -144,7 +125,7 @@
         </div>
       </div>
 
-      <div class="menu-panel" id="panel-pizzas" data-category="comidas">
+      <div class="menu-panel active" id="panel-pizzas" data-category="platos">
         <h3 class="menu-panel-heading">Pizzas</h3>
         <div class="menu-grid">
           <div class="menu-item"><h4>Margarita</h4><span class="price">9,50 €</span><p>Tomate, queso y orégano.</p></div>
@@ -166,7 +147,7 @@
         </div>
       </div>
 
-      <div class="menu-panel" id="panel-mar" data-category="comidas">
+      <div class="menu-panel active" id="panel-mar" data-category="platos">
         <h3 class="menu-panel-heading">Del mar</h3>
         <div class="menu-grid">
           <div class="menu-item"><h4>Bacalao frito</h4><span class="price">13,50 €</span></div>
@@ -179,7 +160,7 @@
         </div>
       </div>
 
-      <div class="menu-panel" id="panel-carnes" data-category="comidas">
+      <div class="menu-panel active" id="panel-carnes" data-category="platos">
         <h3 class="menu-panel-heading">Carnes y hamburguesas</h3>
         <div class="menu-grid">
           <div class="menu-item"><h4>Hamburguesa La Terraza</h4><span class="price">11,50 €</span><p>200 g de vacuno 100%.</p></div>
@@ -194,7 +175,7 @@
         </div>
       </div>
 
-      <div class="menu-panel" id="panel-poke" data-category="comidas">
+      <div class="menu-panel active" id="panel-poke" data-category="platos">
         <h3 class="menu-panel-heading">Poké</h3>
         <div class="menu-grid">
           <div class="menu-item"><h4>Aloha</h4><span class="price">15,50 €</span><p>Arroz basmati, pollo, tomate cherry, cebolla roja, aguacate, piña, alioli de aguacate, pipas de calabaza y salsa de soja.</p></div>
@@ -203,7 +184,7 @@
         </div>
       </div>
 
-      <div class="menu-panel" id="panel-infantiles" data-category="infantil">
+      <div class="menu-panel active" id="panel-infantiles" data-category="platos">
         <h3 class="menu-panel-heading">Infantil</h3>
         <h4 class="menu-subheading">Platos infantiles</h4>
         <div class="menu-grid">
@@ -221,7 +202,7 @@
         </div>
       </div>
 
-      <div class="menu-panel" id="panel-crepes-salados" data-category="comidas">
+      <div class="menu-panel" id="panel-crepes-salados" data-category="postres">
         <h3 class="menu-panel-heading">Crepes salados</h3>
         <div class="menu-grid">
           <div class="menu-item"><h4>Crepes salados</h4><span class="price">6,50 €</span><p>York y queso; serrano y queso; pollo y queso.</p></div>
@@ -276,7 +257,6 @@
     <div class="container">
       <h2 data-lang="es">¿Reservamos mesa?</h2>
       <p data-lang="es">Llámanos para consultar la carta y los menús disponibles.</p>
-      <div class="hero-actions"><a href="contacto.html" class="btn btn-outline-dark">Contacto</a></div>
     </div>
   </section>
 
@@ -294,11 +274,9 @@
               <li><a href="nosotros.html" data-lang="es">Nosotros</a></li>
               <li><a href="eventos.html" data-lang="es">Eventos</a></li>
               <li><a href="cumpleanos-infantiles.html" data-lang="es">Cumpleaños infantiles</a></li>
-              <li><a href="contacto.html" data-lang="es">Contacto</a></li>
             </ul>
         </div>
         <div>
-          <h4 data-lang="es">Contacto</h4>
           <ul>
             <li><a href="tel:+34623112264">+34 623 112 264</a></li>
             <li>Carretera Otura Dílar s/n</li>

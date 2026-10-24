@@ -228,7 +228,7 @@ a { color: inherit; text-decoration: none; }
   background-position: center, center 48%;
 }
 .page-hero-events::before {
-  background-image: linear-gradient(135deg, rgba(26,46,26,0.58) 0%, rgba(26,46,26,0.36) 100%), url('../assets/eventos/evento-04.jpg');
+  background-image: linear-gradient(135deg, rgba(26,46,26,0.58) 0%, rgba(26,46,26,0.36) 100%), url('../assets/celebraciones/mesa-eventos-01.jpeg');
   background-position: center, center 60%;
   background-size: auto, cover;
   background-repeat: no-repeat;
@@ -1672,6 +1672,30 @@ section { padding: 5.5rem 0; }
 .call-float:hover { transform: translateY(-2px); box-shadow: 0 12px 30px rgba(26, 46, 26, .3); }
 .call-float:focus-visible { outline: 3px solid var(--green-mid); outline-offset: 3px; }
 
+/* Christmas menu shortcut on the home page */
+.christmas-float {
+  position: fixed;
+  right: 1.25rem;
+  bottom: 5.75rem;
+  z-index: 1000;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: .6rem;
+  min-height: 52px;
+  padding: .8rem 1.25rem;
+  border: 1px solid rgba(255, 255, 255, .2);
+  border-radius: 999px;
+  background: var(--green-dark);
+  color: #fff;
+  font-weight: 700;
+  text-decoration: none;
+  box-shadow: 0 8px 25px rgba(26, 46, 26, .24);
+  transition: transform var(--transition), box-shadow var(--transition);
+}
+.christmas-float:hover { transform: translateY(-2px); box-shadow: 0 12px 30px rgba(26, 46, 26, .3); }
+.christmas-float:focus-visible { outline: 3px solid var(--gold); outline-offset: 3px; }
+
 /* ========== MOBILE NAV ========== */
 .mobile-nav {
   position: fixed;
@@ -1826,6 +1850,7 @@ section { padding: 5.5rem 0; }
   .birthday-menu-grid { grid-template-columns: 1fr 1fr; }
 }
 @media (max-width: 560px) {
+  .christmas-float { right: 1rem; bottom: 4.5rem; min-height: 46px; padding: .6rem 1rem; font-size: .9rem; }
   .call-float { right: 1rem; bottom: 1rem; left: auto; width: auto; min-height: 46px; padding: .6rem 1rem; font-size: .9rem; }
   .logo .brand-copy span { display: none; }
   .home-birthday-media img, .birthday-viewpoint-grid > img { height: 300px; }
@@ -1881,6 +1906,38 @@ section { padding: 5.5rem 0; }
 @media (max-width: 980px) { .events-baptism-carousel { width: 100%; } }
 @media (max-width: 700px) { .events-baptism-carousel { --gallery-item-height: 280px; } }
 
+/* Cumpleaños: portada apilada para mostrar el texto bajo el vídeo */
+.birthday-feature-stack { grid-template-columns: minmax(0, 900px); justify-content: center; gap: 2rem; }
+.birthday-feature-stack .birthday-gallery { min-height: 0; }
+.birthday-feature-stack .birthday-feature-video { height: auto; aspect-ratio: 16 / 9; max-height: 560px; object-fit: contain; }
+.birthday-feature-stack .birthday-copy { max-width: 760px; margin-inline: auto; width: 100%; }
+.birthday-feature-stack .birthday-copy .section-label,
+.birthday-feature-stack .birthday-copy > h1 { text-align: center; }
+@media (max-width: 980px) { .birthday-feature-stack .birthday-gallery { max-width: none; } }
+
+.page-hero-birthday { min-height: 520px; padding: 0; }
+.page-hero-birthday::before { opacity: 1; }
+@media (max-width: 760px) { .page-hero-birthday { min-height: 340px; } }
+
+.page-hero-birthday { min-height: 500px; display: flex; align-items: center; padding: 6rem 0 4rem; }
+.page-hero-birthday::before { background-image: linear-gradient(135deg, rgba(26,46,26,.58) 0%, rgba(26,46,26,.4) 100%), url('../assets/cumpleanos/cumpleanos-16.jpg'); background-position: center, center 48%; background-size: auto, cover; background-repeat: no-repeat; opacity: 1; }
+.page-hero-birthday h1 em { color: var(--green-light); }
+.page-hero-birthday p:not(.section-label) { max-width: 680px; font-size: 1.15rem; line-height: 1.6; color: rgba(255,255,255,.9); }
+@media (max-width: 760px) { .page-hero-birthday { min-height: 400px; padding: 7rem 0 3rem; } }
+
+.event-menu-gallery { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 1rem; align-items: stretch; margin: 1.5rem auto 3rem; }
+.event-menu-gallery img { display: block; width: 100%; height: auto; aspect-ratio: 3 / 4; object-fit: contain; background: var(--cream); border-radius: var(--radius); }
+@media (max-width: 760px) { .event-menu-gallery { grid-template-columns: 1fr; max-width: 420px; } .event-menu-gallery img { height: auto; } }
+
+.birthday-menu-info > .container > .section-label,
+.birthday-menu-info > .container > .section-title { text-align: center; }
+.birthday-menu-info > .container > .section-title { max-width: none; margin: 0 auto 2.5rem; }
+.birthday-menu-info .kids-flyers { max-width: 1080px; gap: 2rem; margin: 0 auto; grid-template-columns: repeat(3, minmax(0, 1fr)); }
+.birthday-menu-info .kids-flyers img { width: 100%; }
+@media (max-width: 900px) { .birthday-menu-info .kids-flyers { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+@media (max-width: 640px) { .birthday-menu-info .kids-flyers { grid-template-columns: 1fr; } }
+.birthday-menu-info { padding-bottom: clamp(6rem, 10vw, 9rem); }
+.birthday-gallery-section { padding-top: clamp(2rem, 4vw, 4rem); }
 
 /* Carrusel de platos de la carta */
 .menu-food-carousel { --gallery-item-height: 300px; margin: 0 0 3rem; }

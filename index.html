@@ -23,7 +23,6 @@
         <a href="carta.html" data-lang="es">Carta</a>
         <a href="eventos.html" data-lang="es">Eventos</a>
         <a href="cumpleanos-infantiles.html" data-lang="es">Cumpleaños infantiles</a>
-        <a href="contacto.html" data-lang="es">Contacto</a>
       </nav>
       <button class="burger" id="burger" aria-label="Menú"><span></span><span></span><span></span></button>
     </div>
@@ -35,7 +34,6 @@
     <a href="carta.html" data-lang="es">Carta</a>
     <a href="eventos.html" data-lang="es">Eventos</a>
     <a href="cumpleanos-infantiles.html" data-lang="es">Cumpleaños infantiles</a>
-    <a href="contacto.html" data-lang="es">Contacto</a>
   </div>
 
   <section class="hero">
@@ -236,7 +234,28 @@
     </div>
   </section>
 
-  <section class="cta-strip cta-about">
+  <section class="home-map">
+    <div class="container">
+      <h2 class="section-title">Dónde estamos</h2>
+      <div class="map-wrap">
+        <iframe
+          src="https://maps.google.com/maps?q=Restaurante+La+Terraza,+Otura&ll=37.0891756,-3.6273285&z=17&hl=es&output=embed"
+          allowfullscreen=""
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"
+          title="Ubicación de La Terraza en Otura, Granada">
+        </iframe>
+      </div>
+      <div class="map-card">
+        <div>
+          <strong>Restaurante La Terraza</strong>
+          <span>Carretera Otura Dílar s/n, 18630 Otura, Granada · +34 623 112 264</span>
+        </div>
+        <a class="btn btn-primary" href="https://www.google.com/maps/search/?api=1&amp;query=Restaurante+La+Terraza+Otura" target="_blank" rel="noopener noreferrer">Abrir en Google Maps</a>
+      </div>
+    </div>
+  </section>
+<section class="cta-strip cta-about">
     <div class="container">
       <h2 data-lang="es">¿Reservamos mesa?</h2>
       <p data-lang="es">Llámanos para reservar mesa o consultar una celebración.</p>
@@ -260,11 +279,9 @@
               <li><a href="carta.html" data-lang="es">Carta</a></li>
               <li><a href="eventos.html" data-lang="es">Eventos</a></li>
               <li><a href="cumpleanos-infantiles.html" data-lang="es">Cumpleaños infantiles</a></li>
-              <li><a href="contacto.html" data-lang="es">Contacto</a></li>
             </ul>
         </div>
         <div>
-          <h4 data-lang="es">Contacto</h4>
           <ul>
             <li><a href="tel:+34623112264">+34 623 112 264</a></li>
             <li>Carretera Otura Dílar s/n</li>
@@ -297,6 +314,9 @@
   </footer>
 
   <script src="js/main.js"></script>
+  <a href="assets/menu-navidad.pdf" class="christmas-float" target="_blank" rel="noopener noreferrer" aria-label="Ver menú y evento de Navidad">
+    <span aria-hidden="true">🎄</span><span>Menú Navidad</span>
+  </a>
   <a href="tel:+34623112264" class="call-float" aria-label="Llamar a La Terraza">☎ <span>Llamar</span></a>
 </body>
 </html>
