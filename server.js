@@ -47,6 +47,47 @@ const server = http.createServer((request, response) => {
       'Content-Type': contentTypes[extension] || 'application/octet-stream',
       'Cache-Control': isAsset ? 'public, max-age=2592000' : 'no-cache'
     };
+
+    if (extension === '.mp4') {
+      headers['Accept-Ranges'] = 'bytes';
+      const rangeHeader = request.headers.range;
+      const range = rangeHeader && /^bytes=(\d*)-(\d*)$/.exec(rangeHeader);
+
+      if (rangeHeader && !range) {
+        response.writeHead(416, { 'Content-Range': `bytes */${stats.size}` });
+        response.end();
+        return;
+      }
+
+      if (range) {
+        const size = stats.size;
+        let start = range[1] ? Number(range[1]) : null;
+        let end = range[2] ? Number(range[2]) : null;
+
+        if (start === null) {
+          const suffixLength = end;
+          start = Math.max(size - suffixLength, 0);
+          end = size - 1;
+        } else {
+          end = end === null ? size - 1 : Math.min(end, size - 1);
+        }
+
+        if (!Number.isSafeInteger(start) || !Number.isSafeInteger(end) || start < 0 || start >= size || end < start) {
+          response.writeHead(416, { 'Content-Range': `bytes */${size}` });
+          response.end();
+          return;
+        }
+
+        response.writeHead(206, {
+          ...headers,
+          'Content-Length': end - start + 1,
+          'Content-Range': `bytes ${start}-${end}/${size}`
+        });
+        fs.createReadStream(filePath, { start, end }).pipe(response);
+        return;
+      }
+    }
+
     const compressible = ['.html', '.css', '.js', '.svg'].includes(extension)
       && /\bgzip\b/.test(request.headers['accept-encoding'] || '');
 

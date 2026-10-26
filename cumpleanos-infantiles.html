@@ -8,7 +8,8 @@
   <meta name="theme-color" content="#1a2e1a" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet" media="print" onload="this.media='all'" />
+  <link rel="preload" as="image" href="assets/cumpleanos/cumpleanos-16.jpg" fetchpriority="high" />
   <link rel="stylesheet" href="css/styles.css" />
 </head>
 <body>
@@ -46,7 +47,7 @@
   <section class="birthday-feature">
     <div class="container birthday-grid birthday-feature-stack">
       <div class="birthday-gallery">
-        <video class="birthday-feature-video" controls playsinline preload="metadata" aria-label="Vídeo de cumpleaños infantiles en La Terraza">
+        <video class="birthday-feature-video" controls playsinline preload="none" poster="assets/cumpleanos/cumpleanos-16.jpg" aria-label="Vídeo de cumpleaños infantiles en La Terraza">
           <source src="assets/videos/cumpleanos-nuevo.mp4" type="video/mp4" />
         </video>
       </div>
