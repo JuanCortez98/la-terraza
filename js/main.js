@@ -207,14 +207,17 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
   // Reveal sections as they enter the viewport.
-  const revealItems = document.querySelectorAll('section:not(.hero), .footer');
+  // The Carta page stays visible without relying on scroll animations.
+  const revealItems = document.body.classList.contains('menu-page')
+    ? []
+    : document.querySelectorAll('section:not(.hero), .footer');
   const revealObserver = new IntersectionObserver((entries, observer) => {
     entries.forEach(entry => {
       if (!entry.isIntersecting) return;
       entry.target.classList.add('is-visible');
       observer.unobserve(entry.target);
     });
-  }, { threshold: 0.12 });
+  }, { threshold: 0.01 });
 
   revealItems.forEach(item => {
     item.classList.add('reveal');

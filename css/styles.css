@@ -169,6 +169,8 @@ a { color: inherit; text-decoration: none; }
   transform: translateY(0);
 }
 
+body.menu-page .reveal { opacity: 1; transform: none; }
+
 .burger {
   display: none;
   flex-direction: column;
@@ -1846,7 +1848,7 @@ section { padding: 5.5rem 0; }
 @media (max-width: 560px) {
   .christmas-float { right: 1rem; bottom: 4.5rem; min-height: 46px; padding: .6rem 1rem; font-size: .9rem; }
   .call-float { right: 1rem; bottom: 1rem; left: auto; width: auto; min-height: 46px; padding: .6rem 1rem; font-size: .9rem; }
-  .logo .brand-copy span { display: none; }
+  .logo .brand-copy span { display: block; font-size: .48rem; letter-spacing: .08em; line-height: 1.25; }
   .home-birthday-media img, .birthday-viewpoint-grid > img { height: 300px; }
   .home-birthday-copy .hero-actions { display: grid; }
   .birthday-menu-grid { grid-template-columns: 1fr; }
@@ -1890,7 +1892,17 @@ section { padding: 5.5rem 0; }
 .lightbox-close { position: absolute; top: 1rem; right: 1.2rem; font-size: 2.2rem; line-height: 1; color: #fff; background: none; border: 0; cursor: pointer; }
 .kids-flyers a[data-lightbox] { cursor: zoom-in; }
 
-.birthday-feature-video { display: block; width: 100%; height: 500px; min-height: 320px; max-height: 520px; object-fit: cover; border-radius: var(--radius); background: var(--green-dark); }
+.birthday-feature-video {
+  display: block;
+  width: auto;
+  height: min(72vh, 560px);
+  max-width: 100%;
+  aspect-ratio: auto;
+  object-fit: contain;
+  border-radius: var(--radius);
+  background: transparent;
+  box-shadow: var(--shadow);
+}
 
 .events-baptism-carousel { min-width: 0; --gallery-item-height: 360px; }
 .events-baptism-carousel .gallery-grid { display: flex; gap: 1rem; overflow-x: auto; scroll-snap-type: x mandatory; scrollbar-width: none; }
@@ -1903,7 +1915,8 @@ section { padding: 5.5rem 0; }
 /* Cumpleaños: portada apilada para mostrar el texto bajo el vídeo */
 .birthday-feature-stack { grid-template-columns: minmax(0, 900px); justify-content: center; gap: 2rem; }
 .birthday-feature-stack .birthday-gallery { min-height: 0; }
-.birthday-feature-stack .birthday-feature-video { height: auto; aspect-ratio: 16 / 9; max-height: 560px; object-fit: contain; }
+.birthday-feature-stack .birthday-gallery { display: flex; justify-content: center; }
+.birthday-feature-stack .birthday-feature-video { max-height: 560px; }
 .birthday-feature-stack .birthday-copy { max-width: 760px; margin-inline: auto; width: 100%; }
 .birthday-feature-stack .birthday-copy .section-label,
 .birthday-feature-stack .birthday-copy > h1 { text-align: center; }
